@@ -17,7 +17,7 @@
           <a href="#">Войти</a>
         </li>
         <li class="profile">
-          <a href="#">Валентин Петухов</a>
+          <a href="profile.html">Валентин Петухов</a>
         </li>
         <li class="logout">
           <a href="#">Выйти</a>
@@ -89,23 +89,37 @@
         </fieldset>
         <fieldset>
           <legend>Цвет</legend>
-          <input type="checkbox" value="black" id="checkbox-black" checked>
-          <label for="checkbox-black">Черный</label>
-          <input type="checkbox" value="white" id="checkbox-white">
-          <label for="checkbox-white">Белый</label>
-          <input type="checkbox" value="blue" id="checkbox-blue" checked>
-          <label for="checkbox-blue">Синий</label>
-          <input type="checkbox" value="red" id="checkbox-red" checked>
-          <label for="checkbox-red">Красный</label>
-          <input type="checkbox" value="pink" id="checkbox-pink">
-          <label for="checkbox-pink">Розовый</label>
+          <div class="form-field">
+            <input type="checkbox" value="black" id="checkbox-black" checked>
+            <label for="checkbox-black">Черный</label>
+          </div>
+          <div class="form-field">
+            <input type="checkbox" value="white" id="checkbox-white">
+            <label for="checkbox-white">Белый</label>
+          </div>
+          <div class="form-field">
+            <input type="checkbox" value="blue" id="checkbox-blue" checked>
+            <label for="checkbox-blue">Синий</label>
+          </div>
+          <div class="form-field">
+            <input type="checkbox" value="red" id="checkbox-red" checked>
+            <label for="checkbox-red">Красный</label>
+          </div>
+          <div class="form-field">
+            <input type="checkbox" value="pink" id="checkbox-pink">
+            <label for="checkbox-pink">Розовый</label>
+          </div>
         </fieldset>
         <fieldset>
           <legend>Bluetooth</legend>
-          <input type="radio" id="radio-yes" checked>
-          <label for="radio-yes">Есть</label>
-          <input type="radio" id="radio-no" checked>
-          <label for="radio-no">Нет</label>
+          <div class="form-field">
+            <input type="radio" id="radio-yes" checked>
+            <label for="radio-yes">Есть</label>
+          </div>
+          <div class="form-field">
+            <input type="radio" id="radio-no" checked>
+            <label for="radio-no">Нет</label>
+          </div>
         </fieldset>
         <input class="btn" type="submit" value="Показать">
       </form>
@@ -125,10 +139,10 @@
       </ul>
       <ul class="sort-direction-list">
         <li>
-          <a class="sort-ascending" href="#">▲</a>
+          <a class="sort-ascending" href="#" title="Сортировать по возрастанию">▲</a>
         </li>
         <li class="sort-direction-active">
-          <a class="sort-descending" href="#">▼</a>
+          <a class="sort-descending" href="#" title="Сортировать по убыванию">▼</a>
         </li>
       </ul>
     </section>
@@ -136,7 +150,7 @@
       <h2 class="hidden">Список товаров</h2>
       <ul class="catalog-list">
         <li class="catalog-item">
-          <a href="#">
+          <a href="beginner-stick.html">
             <h3>
               <span class="catalog-item-name">Любительская селфи-палка</span>
               <span class="catalog-item-price">500 руб.</span>
@@ -145,11 +159,11 @@
               <img src="img/item-1.jpg" alt="Любительская селфи-палка" width="360" height="380">
             </div>
           </a>
-          <a class="btn" href="#">В корзину</a>
-          <a class="compare-add" href="#">Сравнить</a>
+          <button class="btn basket-add" formaction="#">В корзину</button>
+          <button class="compare-add" formaction="#">Сравнить</button>
         </li>
         <li class="catalog-item">
-          <a href="#">
+          <a href="pro-stick.html">
             <h3>
               <span class="catalog-item-name">Профессиональная селфи-палка</span>
               <span class="catalog-item-price">1500 руб.</span>
@@ -158,11 +172,11 @@
               <img src="img/item-2.jpg" alt="Профессиональная селфи-палка" width="360" height="380">
             </div>
           </a>
-          <a class="btn" href="#">В корзину</a>
-          <a class="compare-add" href="#">Сравнить</a>
+          <button class="btn basket-add" formaction="#">В корзину</button>
+          <button class="compare-add" formaction="#">Сравнить</button>
         </li>
         <li class="catalog-item">
-          <a href="#">
+          <a href="waterproof-stick.html">
             <h3>
               <span class="catalog-item-name">Непотопляемая селфи-палка</span>
               <span class="catalog-item-price">2500 руб.</span>
@@ -171,11 +185,11 @@
               <img src="img/item-3.jpg" alt="Непотопляемая селфи-палка" width="360" height="380">
             </div>
           </a>
-          <a class="btn" href="#">В корзину</a>
-          <a class="compare-add" href="#">Сравнить</a>
+          <button class="btn basket-add" formaction="#">В корзину</button>
+          <button class="compare-add" formaction="#">Сравнить</button>
         </li>
         <li class="catalog-item new">
-          <a href="#">
+          <a href="follow-me-stick.html">
             <h3>
               <span class="catalog-item-name">Селфи-палка «Следуй за мной»</span>
               <span class="catalog-item-price">4900 руб.</span>
@@ -184,8 +198,8 @@
               <img src="img/item-4.jpg" alt="Селфи-палка «Следуй за мной»" width="360" height="380">
             </div>
           </a>
-          <a class="btn" href="#">В корзину</a>
-          <a class="compare-add" href="#">Сравнить</a>
+          <button class="btn basket-add" formaction="#">В корзину</button>
+          <button class="compare-add" formaction="#">Сравнить</button>
         </li>
       </ul>
       <nav class="pagination">
@@ -257,7 +271,7 @@
         </li>
       </ul>
     </div>
-    <a class="credits" href="#">HTML Academy</a>
+    <a class="credits" href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
   </footer>
   <script src="js/script.js"></script>
 </body>
