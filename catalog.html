@@ -1,13 +1,124 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Academy: Девайс: Каталог товаров</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Academy: Девайс</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <h1>Моноподы для селфи</h1>
+  <header class="header">
+    <nav class="main-nav">
+      <a class="header-logo" href="index.html">Device</a>
+      <ul class="user-nav">
+        <li class="login hidden">
+          <a href="#">Войти</a>
+        </li>
+        <li class="profile">
+          <a href="#">Валентин Петухов</a>
+        </li>
+        <li class="logout">
+          <a href="#">Выйти</a>
+        </li>
+      </ul>
+      <ul class="site-nav">
+        <li>
+          <a href="index.html#delivery">Доставка</a>
+        </li>
+        <li>
+          <a href="index.html#warranty">Гарантия</a>
+        </li>
+        <li>
+          <a href="index.html#contact">Контакты</a>
+        </li>
+      </ul>
+      <a class="catalog-nav-btn" href="#" class="catalog-nav-btn">Каталог товаров</a>
+      <ul class="catalog-nav hidden">
+        <li>
+          <a href="catalog.html#">Виртуальная реальность</a>
+        </li>
+        <li>
+          <a href="catalog.html#">Моноподы для селфи</a>
+        </li>
+        <li>
+          <a href="catalog.html#">Экшн-камеры</a>
+        </li>
+        <li>
+          <a href="catalog.html#">Фитнес-браслеты</a>
+        </li>
+        <li>
+          <a href="catalog.html#">Умные часы</a>
+        </li>
+        <li>
+          <a href="catalog.html#">Квадрокоптеры</a>
+        </li>
+      </ul>
+    </nav>
+    <form action="#" method="get" name="header-search">
+      <input type="search" name="header-search" placeholder="Поиск по сайту">
+      <input class="search-btn hidden" type="submit" value="Найти">
+    </form>
+    <a class="compare" href="#">Сравнить</a>
+    <div class="basket-container">
+      <a class="basket" href="#">Корзина</a>
+      <a class="checkout hidden" href="#">Оформить заказ</a>
+    </div>
+  </header>
+  <main class="container-catalog">
+
+  </main>
+  <footer class="footer">
+    <div class="footer-logo-container">
+      <a class="footer-logo" href="index.html">Device</a>
+    </div>
+    <address class="footer-address">
+      г. Москва, ул. Строителей, 15
+    </address>
+    <ul class="user-nav footer">
+      <li class="login hidden">
+        <a href="#">Войти</a>
+      </li>
+      <li class="profile">
+        <a href="#">Валентин Петухов</a>
+      </li>
+      <li class="logout">
+        <a href="#">Выйти</a>
+      </li>
+    </ul>
+    <ul class="site-nav footer">
+      <li>
+        <a href="index.html#delivery">Доставка</a>
+      </li>
+      <li>
+        <a href="index.html#warranty">Гарантия</a>
+      </li>
+      <li>
+        <a href="index.html#contact">Контакты</a>
+      </li>
+    </ul>
+    <a class="compare footer" href="#">Сравнить</a>
+    <div class="basket-container footer">
+      <a class="basket" href="#">Корзина</a>
+      <a class="checkout hidden" href="#">Оформить заказ</a>
+    </div>
+    <a class="phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+    <div class="social">
+      <ul class="social-list">
+        <li>
+          <a class="facebook" href="#">Fb</a>
+        </li>
+        <li>
+          <a class="instagram" href="#">Insta</a>
+        </li>
+        <li>
+          <a class="twitter" href="#">Tw</a>
+        </li>
+      </ul>
+    </div>
+    <a class="credits" href="#">HTML Academy</a>
+  </footer>
   <script src="js/script.js"></script>
 </body>
 </html>
