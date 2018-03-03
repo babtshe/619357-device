@@ -11,18 +11,7 @@
 <body>
   <header class="header-main">
     <nav class="main-nav">
-      <a class="header-logo front">Device</a>
-      <ul class="site-nav">
-        <li>
-          <a href="index.html#delivery">Доставка</a>
-        </li>
-        <li>
-          <a href="index.html#warranty">Гарантия</a>
-        </li>
-        <li>
-          <a href="index.html#contact">Контакты</a>
-        </li>
-      </ul>
+      <a class="header-logo main">Device</a>
       <ul class="user-nav">
         <li class="login">
           <a href="#">Войти</a>
@@ -32,6 +21,17 @@
         </li>
         <li class="logout hidden">
           <a href="#">Выйти</a>
+        </li>
+      </ul>
+      <ul class="site-nav">
+        <li>
+          <a href="index.html#delivery">Доставка</a>
+        </li>
+        <li>
+          <a href="index.html#warranty">Гарантия</a>
+        </li>
+        <li>
+          <a href="index.html#contact">Контакты</a>
         </li>
       </ul>
       <a class="catalog-nav-btn" href="#" class="catalog-nav-btn">Каталог товаров</a>
@@ -62,11 +62,11 @@
     </form>
     <a class="compare" href="#">Сравнить</a>
     <div class="basket-container">
-      <a class="basket href="#"">Корзина</a>
+      <a class="basket href=" # "">Корзина</a>
       <a class="checkout hidden" href="#">Оформить заказ</a>
     </div>
   </header>
-  <main class="front-main">
+  <main class="container-main">
     <h1 class="hidden">Девайс</h1>
     <section class="slider">
       <div class="slider-radio">
@@ -128,7 +128,7 @@
               <th>Радиус поражения</th>
             </tr>
           </table>
-          <a class="btn href="#"">Подробнее</a>
+          <a class="btn href=" # "">Подробнее</a>
         </li>
       </ol>
     </section>
@@ -219,7 +219,7 @@
       <h2>Контакты</h2>
       <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
       <div class="map">
-        <a class="map-popup href="#"">
+        <a class="map-popup" href="#">
           <!-- тут будет карта -->
           <img src="img/map.jpg" alt="схема проезда" height="222" width="560">
         </a>
@@ -229,11 +229,13 @@
     </section>
   </main>
   <footer class="footer-main">
-    <div class="logo">Device</div>
-    <address>
+    <div class="footer-logo">
+      <a class="footer-logo main">Device</a>
+    </div>
+    <address class="footer-address">
       г. Москва, ул. Строителей, 15
     </address>
-    <ul class="login-links footer">
+    <ul class="user-nav footer">
       <li class="login">
         <a href="#">Войти</a>
       </li>
@@ -244,35 +246,36 @@
         <a href="#">Выйти</a>
       </li>
     </ul>
+    <ul class="site-nav footer">
+      <li>
+        <a href="index.html#delivery">Доставка</a>
+      </li>
+      <li>
+        <a href="index.html#warranty">Гарантия</a>
+      </li>
+      <li>
+        <a href="index.html#contact">Контакты</a>
+      </li>
+    </ul>
     <a class="compare footer" href="#">Сравнить</a>
     <div class="basket-container footer">
       <a class="basket" href="#">Корзина</a>
       <a class="checkout hidden" href="#">Оформить заказ</a>
     </div>
-
-    <ul class="footer-menu">
-      <li>
-        <a href="#">Доставка</a>
-      </li>
-      <li>
-        <a href="#">Гарантия</a>
-      </li>
-      <li>
-        <a href="#">Контакты</a>
-      </li>
-    </ul>
     <a class="phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
-    <ul class="social">
-      <li>
-        <a class="facebook" href="#">Fb</a>
-      </li>
-      <li>
-        <a class="instagram" href="#">Ista</a>
-      </li>
-      <li>
-        <a class="twitter" href="#">Tw</a>
-      </li>
-    </ul>
+    <div class="social">
+      <ul class="social-list">
+        <li>
+          <a class="facebook" href="#">Fb</a>
+        </li>
+        <li>
+          <a class="instagram" href="#">Ista</a>
+        </li>
+        <li>
+          <a class="twitter" href="#">Tw</a>
+        </li>
+      </ul>
+    </div>
     <a class="credits" href="#">HTML Academy</a>
   </footer>
   <script src="js/script.js"></script>
