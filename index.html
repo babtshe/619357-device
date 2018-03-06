@@ -62,7 +62,7 @@
     </form>
     <a class="compare" href="#">Сравнить</a>
     <div class="basket-container">
-      <a class="basket href"="#">Корзина</a>
+      <a class="basket" href="#">Корзина</a>
       <a class="checkout hidden" href="#">Оформить заказ</a>
     </div>
   </header>
@@ -128,7 +128,7 @@
               <th>Радиус поражения</th>
             </tr>
           </table>
-          <a class="btn"href="#">Подробнее</a>
+          <a class="btn" href="#">Подробнее</a>
         </li>
       </ol>
     </section>
@@ -180,25 +180,50 @@
     </section>
     <section class="brands">
       <h2 class="hidden">Бренды</h2>
+      <svg class="filter-container" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <defs>
+          <filter id="filtersPicture">
+            <feComposite result="inputTo_38" in="SourceGraphic" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0"
+            />
+            <feColorMatrix id="filter_38" type="saturate" values="0" data-filterid="38" />
+          </filter>
+        </defs>
+      </svg>
       <ul class="brands-list">
         <li>
           <a href="#">
-            <img src="img/logo-1.jpg" alt="dji" width="260" height="100">
+            <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
+              <title>dji</title>
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="img/logo-1.jpg" />
+            </svg>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="img/logo-2.jpg" alt="spgadgets" width="260" height="100">
+            <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
+              <title>spgadgets</title>
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="img/logo-2.jpg" />
+            </svg>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="img/logo-3.jpg" alt="gopro" width="260" height="100">
+            <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
+              <title>gopro</title>
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="img/logo-3.jpg" />
+            </svg>
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="img/logo-4.jpg" alt="vive" width="260" height="100">
+            <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
+              <title>vive</title>
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="img/logo-4.jpg" />
+            </svg>
           </a>
         </li>
       </ul>
@@ -279,4 +304,5 @@
   </footer>
   <script src="js/script.js"></script>
 </body>
+
 </html>
