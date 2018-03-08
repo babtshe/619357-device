@@ -194,8 +194,8 @@
           <a href="#">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>dji</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="img/logo-1.jpg" />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-1.jpg"
+              />
             </svg>
           </a>
         </li>
@@ -203,8 +203,8 @@
           <a href="#">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>spgadgets</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="img/logo-2.jpg" />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-2.jpg"
+              />
             </svg>
           </a>
         </li>
@@ -212,8 +212,8 @@
           <a href="#">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>gopro</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="img/logo-3.jpg" />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-3.jpg"
+              />
             </svg>
           </a>
         </li>
@@ -221,8 +221,8 @@
           <a href="#">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>vive</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="img/logo-4.jpg" />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-4.jpg"
+              />
             </svg>
           </a>
         </li>
@@ -248,8 +248,25 @@
           <img src="img/map.jpg" alt="схема проезда" height="222" width="560">
         </a>
       </div>
-      <a class="btn" href="#">Напишите нам</a>
-      <!-- тут будет форма -->
+      <a class="btn" href="#popup-writeus">Напишите нам</a>
+      <div class="overlay" id="popup-writeus">
+        <form class="form-popup" action="#" method="post" name="form-contact">
+        <button class="form-cancel-btn" formaction="#" formnovalidate>X</button>
+        <div class="form-field">
+          <label for="name-field">Ваше имя:</label>
+          <input type="text" id="name-field" placeholder="Имя Фамилия" required>
+        </div>
+        <div class="form-field">
+          <label for="email-field">Ваш e-mail:</label>
+          <input type="email" id="email-field" placeholder="email@example.com" required>
+        </div>
+        <div class="form-field">
+          <label for="message-field">Текст письма:</label>
+          <textarea id="message-field" placeholder="В свободной форме" required></textarea>
+        </div>
+        <input class="btn" type="submit" value="Отправить">
+      </form>
+    </div>
     </section>
   </main>
   <footer class="footer-main">
