@@ -56,8 +56,8 @@
         </li>
       </ul>
     </nav>
-    <form action="#" method="get" name="header-search">
-      <input type="search" name="header-search" placeholder="Поиск по сайту">
+    <form action="http://echo.htmlacademy.ru" method="get" name="header-search">
+      <input class="search-field" type="search" name="header-search" placeholder="Поиск по сайту">
       <input class="search-btn hidden" type="submit" value="Найти">
     </form>
     <a class="compare" href="#">Сравнить</a>
@@ -87,37 +87,39 @@
           <label for="range-start">От</label>
           <label for="range-end">До</label>
         </fieldset>
-        <fieldset><!-- add names and ul -->
+        <fieldset>
           <legend>Цвет</legend>
-          <div class="form-field">
-            <input type="checkbox" value="black" id="checkbox-black" checked>
-            <label for="checkbox-black">Черный</label>
-          </div>
-          <div class="form-field">
-            <input type="checkbox" value="white" id="checkbox-white">
-            <label for="checkbox-white">Белый</label>
-          </div>
-          <div class="form-field">
-            <input type="checkbox" value="blue" id="checkbox-blue" checked>
-            <label for="checkbox-blue">Синий</label>
-          </div>
-          <div class="form-field">
-            <input type="checkbox" value="red" id="checkbox-red" checked>
-            <label for="checkbox-red">Красный</label>
-          </div>
-          <div class="form-field">
-            <input type="checkbox" value="pink" id="checkbox-pink">
-            <label for="checkbox-pink">Розовый</label>
-          </div>
+          <ul>
+            <li class="form-field">
+              <input type="checkbox" name="color" value="black" id="checkbox-black" checked>
+              <label for="checkbox-black">Черный</label>
+            </li>
+            <li class="form-field">
+              <input type="checkbox" name="color" value="white" id="checkbox-white">
+              <label for="checkbox-white">Белый</label>
+            </li>
+            <li class="form-field">
+              <input type="checkbox" name="color" value="blue" id="checkbox-blue" checked>
+              <label for="checkbox-blue">Синий</label>
+            </li>
+            <li class="form-field">
+              <input type="checkbox" name="color" value="red" id="checkbox-red" checked>
+              <label for="checkbox-red">Красный</label>
+            </li>
+            <li class="form-field">
+              <input type="checkbox" name="color" value="pink" id="checkbox-pink">
+              <label for="checkbox-pink">Розовый</label>
+            </li>
+          </ul>
         </fieldset>
         <fieldset>
           <legend>Bluetooth</legend>
           <div class="form-field">
-            <input type="radio" id="radio-yes" checked>
+            <input type="radio" name="bluetooth" value="true" id="radio-yes" checked>
             <label for="radio-yes">Есть</label>
           </div>
           <div class="form-field">
-            <input type="radio" id="radio-no" checked>
+            <input type="radio" name="bluetooth" value="false" id="radio-no">
             <label for="radio-no">Нет</label>
           </div>
         </fieldset>
@@ -147,8 +149,9 @@
       </ul>
     </section>
     <section class="catalog">
-      <h2 class="hidden">Список товаров</h2>
-      <ul class="catalog-list"><!-- add article -->
+      <h2 class="visually-hidden">Список товаров</h2>
+      <ul class="catalog-list">
+        <!-- add article -->
         <li class="catalog-item">
           <a href="beginner-stick.html">
             <h3>

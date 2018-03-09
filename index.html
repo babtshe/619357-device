@@ -56,8 +56,8 @@
         </li>
       </ul>
     </nav>
-    <form action="#" method="get" name="header-search">
-      <input type="search" name="header-search" placeholder="Поиск по сайту">
+    <form action="http://echo.htmlacademy.ru" method="post" name="header-search">
+      <input class="search-field" type="search" name="header-search" placeholder="Поиск по сайту">
       <input class="search-btn hidden" type="submit" value="Найти">
     </form>
     <a class="compare" href="#">Сравнить</a>
@@ -67,7 +67,7 @@
     </div>
   </header>
   <main class="container-main">
-    <h1 class="hidden">Девайс</h1>
+    <h1 class="visually-hidden">Девайс</h1>
     <section class="slider">
       <div class="slider-radio">
         <input type="radio" name="toggle-slider" id="slider-1" checked>
@@ -76,7 +76,7 @@
       </div>
       <ol class="slider-list">
         <li class="slider-item">
-          <h2 class="hidden">Палка для селфи</h2>
+          <h2 class="visually-hidden">Палка для селфи</h2>
           <div class="slider-slogan">Делай селфи, как Бен Стиллер!</div>
           <img src="img/slider-1.png" alt="селфи-палка" width="384" height="486">
           <p class="slider-description">Самая длинная палка для селфи доступна в нашем магазине.
@@ -97,7 +97,7 @@
           <a class="btn" href="#">Подробнее</a>
         </li>
         <li class="slider-item">
-          <h2 class="hidden">Фитнес-браслет</h2>
+          <h2 class="visually-hidden">Фитнес-браслет</h2>
           <div class="slider-slogan">Худеем правильно!</div>
           <img src="img/slider-2.png" alt="фитнес-браслет" width="385" height="485">
           <p class="slider-description">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
@@ -113,7 +113,7 @@
           <a href="#" class="btn">Подробнее</a>
         </li>
         <li class="slider-item">
-          <h2 class="hidden">Квадрокоптер</h2>
+          <h2 class="visually-hidden">Квадрокоптер</h2>
           <div class="slider-slogan">Порхает как бабочка, жалит как пчела!</div>
           <img src="img/slider-3.png" alt="квадрокоптер" width="526" height="334">
           <p class="slider-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
@@ -133,7 +133,7 @@
       </ol>
     </section>
     <section class="catalog-sections">
-      <h2 class="hidden">Каталог товаров</h2>
+      <h2 class="visually-hidden">Каталог товаров</h2>
       <ul class="catalog-sections-list">
         <li>
           <a href="catalog.html#">Виртуальная реальность</a>
@@ -156,7 +156,7 @@
       </ul>
     </section>
     <section class="services">
-      <h2 class="hidden">Услуги</h2>
+      <h2 class="visually-hidden">Услуги</h2>
       <ul>
         <li id="delivery">
           <a class="btn" href="#delivery">Доставка</a>
@@ -179,7 +179,7 @@
       </ul>
     </section>
     <section class="brands">
-      <h2 class="hidden">Бренды</h2>
+      <h2 class="visually-hidden">Бренды</h2>
       <svg class="filter-container" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
         <defs>
           <filter id="filtersPicture">
@@ -250,23 +250,23 @@
       </div>
       <a class="btn" href="#popup-writeus">Напишите нам</a>
       <div class="overlay" id="popup-writeus">
-        <form class="form-popup" action="#" method="post" name="form-contact">
-        <button class="form-cancel-btn" formaction="#" formnovalidate>X</button>
-        <div class="form-field">
-          <label for="name-field">Ваше имя:</label>
-          <input type="text" id="name-field" placeholder="Имя Фамилия" required>
-        </div>
-        <div class="form-field">
-          <label for="email-field">Ваш e-mail:</label>
-          <input type="email" id="email-field" placeholder="email@example.com" required>
-        </div>
-        <div class="form-field">
-          <label for="message-field">Текст письма:</label>
-          <textarea id="message-field" placeholder="В свободной форме" required></textarea>
-        </div>
-        <input class="btn" type="submit" value="Отправить">
-      </form>
-    </div>
+        <form class="form-popup" action="http://echo.htmlacademy.ru" method="post" name="form-contact">
+          <div class="form-field">
+            <label for="name-field">Ваше имя:</label>
+            <input type="text" id="name-field" name="name" placeholder="Имя Фамилия" required>
+          </div>
+          <div class="form-field">
+            <label for="email-field">Ваш e-mail:</label>
+            <input type="email" id="email-field" name="email" placeholder="email@example.com" required>
+          </div>
+          <div class="form-field flex-wide">
+            <label for="message-field">Текст письма:</label>
+            <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
+          </div>
+          <input class="btn" type="submit" value="Отправить">
+          <button class="form-cancel-btn" formaction="#contact" formnovalidate></button>
+        </form>
+      </div>
     </section>
   </main>
   <footer class="footer-main">

@@ -1,51 +1,241 @@
+/*
+* — load fonts —
+*/
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy Light'), local('Gilroylight'), url(../gilroylight.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy ExtraBold'), local('GilroyextraBold'), url(../gilroyextrabold.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'), local('OpenSans-Regular'), url(../opensans.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../opensanslight.woff) format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+input,
+textarea,
+.sort-type-list {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+p,
+.user-nav,
+.catalog-nav,
+.search-field,
+.search-btn,
+.phone,
+.footer-address {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.catalog-nav-btn,
+.site-nav,
+.btn,
+.catalog-sections-list,
+.form-popup label {
+  font-family: 'Gilroy', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+/*
+* — buttons —
+*/
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 160px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  border: none;
+  outline: none;
+  letter-spacing: 0.2em;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #f0c52e;
+  transition: all 200ms;
+  box-shadow: inset 0px 16px 0px 0px #ffffff, inset 0px -16px 0px 0px #ffffff;
+
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+box-shadow:none;
+}
+
+.btn:active {
+color: rgba(0, 0, 0, 0.3);
+}
+
+/*
+* — accessibility —
+*/
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 .hidden {
   display: none;
 }
-
+/*
+* — brands —
+*/
 .brand-grayscale image {
   opacity: 0.2;
   transition: opacity 200ms;
 }
 
-.brand-grayscale:hover image {
+.brand-grayscale:hover image,
+a:focus image {
   opacity: 1;
   filter: none;
 }
 
+/*
+* — forms —
+*/
+
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   transition: opacity 200ms;
   visibility: hidden;
   opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
-.form-popup {
-  margin: 75px auto;
-  padding: 20px;
-  background: #fff;
-  border: 1px solid #666;
-  width: 300px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.5);
-  position: relative;
-}
+
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
+
+.form-popup {
+  box-sizing: border-box;
+  padding: 92px 100px 78px;
+  background: #fff;
+  border: none;
+  max-width: 960px;
+  min-height: 553px;
+  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);/*тень из PS конвертируется в css неточно; вставить картинкой?*/
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+.form-popup input[type="text"],
+.form-popup input[type="email"],
+.form-popup textarea {
+  padding:15px;
+  margin-bottom:40px;
+  border:none;
+  background-color: rgba(230, 230, 230, 0.5)
+}
+.form-popup input[type="text"]:hover,
+.form-popup input[type="email"]:hover,
+.form-popup textarea:hover {
+  border:none;
+  background-color: rgba(230, 230, 230, 0.8)
+}
+.form-popup input[type="text"]:focus,
+.form-popup input[type="email"]:focus,
+.form-popup textarea:focus {
+  outline:  3px solid #f0c52e;
+  background-color:#ffffff;
+}
+.form-popup input[type="text"]:invalid,
+.form-popup input[type="email"]:invalid,
+.form-popup textarea:invalid {
+ /* background-color:rgba(237, 181, 181, 0.5);*/
+}
+.form-popup input[type="text"],
+.form-popup input[type="email"] {
+  box-sizing:border-box;
+  width:360px;
+}
+.form-popup .form-field:first-child {
+  margin-right:40px;
+}
+.form-popup .form-field.flex-wide {
+  flex-basis:100%;
+}
+.form-popup textarea {
+  box-sizing: border-box;
+  overflow:auto;
+  min-height:155px;
+  width:100%;
+  resize:none;
+}
+
+
 .form-cancel-btn {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 20px;
-  right: 20px;
-  opacity: 0.8;
+  display: block;
+  padding: 0;
+  width: 55px;
+  height: 55px;
+  top: 22px;
+  right: 22px;
+  opacity: 0.5;
   transition: all 200ms;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #666;
+  border: none;
+  border-radius: 50%;
+  background: center/100% url("../img/modal-close.svg") no-repeat;
+}
+
+.form-cancel-btn:hover,
+.form-cancel-btn:focus {
+  opacity: 1;
+  outline: none;
+}
+
+.form-cancel-btn:active {
+  opacity: 0.3;
+}
+.form-popup input[type="submit"] {
+  display:block;
+  width:200px;
+}
+.form-popup label {
+  display:block;
+  margin-bottom:5px;
 }
