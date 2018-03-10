@@ -48,6 +48,7 @@ p,
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
+  letter-spacing:0.01em;
   font-weight: 300;
   font-style: normal;
 }
@@ -83,17 +84,18 @@ p,
   background-color: #f0c52e;
   transition: all 200ms;
   box-shadow: inset 0px 16px 0px 0px #ffffff, inset 0px -16px 0px 0px #ffffff;
-
+  /*в IE не работает, придется строить костыль
+  gradient? ::before ::after?*/
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active {
-box-shadow:none;
+  box-shadow: none;
 }
 
 .btn:active {
-color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /*
@@ -107,12 +109,15 @@ color: rgba(0, 0, 0, 0.3);
   height: 1px;
   margin: -1px;
 }
+
 .hidden {
   display: none;
 }
+
 /*
 * — brands —
 */
+
 .brand-grayscale image {
   opacity: 0.2;
   transition: opacity 200ms;
@@ -127,6 +132,92 @@ a:focus image {
 /*
 * — forms —
 */
+.form-search {
+  display:flex;
+}
+.search-field {
+  box-sizing:border-box;
+  color: #000000;
+  background-color: transparent;
+  background-image: url("../img/search.svg");
+  background-repeat:no-repeat;
+  background-position:left 4px bottom 14px;
+  border: none;
+  padding: 8px 20px 8px 39px;
+  width: 355px;
+ /*TODO fix vertical alignment in IE*/
+}
+
+/*placeholder madness */
+
+.search-field::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field:hover::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:hover::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:hover::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:hover:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:hover:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:focus {
+  border-bottom: 2px solid #000000;
+  outline: none;
+}
+
+.search-btn {
+  width: 85px;
+  height: 49px;
+  background-color: transparent;
+  border: 2px solid #000000;
+}
+
+.search-field:focus+.search-btn {
+  display: block;
+}
+
+.search-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.search-btn:active {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.3);
+  display:block;
+}
+
+/*background overlay*/
 
 .overlay {
   position: fixed;
@@ -155,59 +246,92 @@ a:focus image {
   background: #fff;
   border: none;
   max-width: 960px;
+  min-width: 560px;
   min-height: 553px;
-  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);/*тень из PS конвертируется в css неточно; вставить картинкой?*/
+  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
+  /*тень из PS конвертируется в css неточно; вставить картинкой?*/
   position: relative;
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
+
 .form-popup input[type="text"],
 .form-popup input[type="email"],
 .form-popup textarea {
-  padding:15px;
-  margin-bottom:40px;
-  border:none;
+  padding: 15px;
+  margin-bottom: 40px;
+  border: none;
   background-color: rgba(230, 230, 230, 0.5)
 }
+
 .form-popup input[type="text"]:hover,
 .form-popup input[type="email"]:hover,
 .form-popup textarea:hover {
-  border:none;
+  border: none;
   background-color: rgba(230, 230, 230, 0.8)
 }
+
 .form-popup input[type="text"]:focus,
 .form-popup input[type="email"]:focus,
 .form-popup textarea:focus {
-  outline:  3px solid #f0c52e;
-  background-color:#ffffff;
+  outline: 3px solid #f0c52e;
+  background-color: #ffffff;
 }
+
 .form-popup input[type="text"]:invalid,
 .form-popup input[type="email"]:invalid,
 .form-popup textarea:invalid {
- /* background-color:rgba(237, 181, 181, 0.5);*/
+  /* background-color:rgba(237, 181, 181, 0.5);
+ проверить и повесить на поля при отправке формы или потере фокуса
+ */
 }
+
 .form-popup input[type="text"],
 .form-popup input[type="email"] {
-  box-sizing:border-box;
-  width:360px;
+  box-sizing: border-box;
+  width: 360px;
 }
+
 .form-popup .form-field:first-child {
-  margin-right:40px;
+  margin-right: 40px;
 }
+
 .form-popup .form-field.flex-wide {
-  flex-basis:100%;
+  flex-basis: 100%;
 }
+
 .form-popup textarea {
   box-sizing: border-box;
-  overflow:auto;
-  min-height:155px;
-  width:100%;
-  resize:none;
+  overflow: auto;
+  min-height: 155px;
+  width: 100%;
+  resize: none;
 }
 
+.form-popup input[type="submit"] {
+  display: block;
+  width: 200px;
+}
 
-.form-cancel-btn {
+.form-popup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.map-popup {
+  box-sizing: border-box;
+  padding: none;
+  background: url("../img/map-big.jpg") no-repeat 100% #ffffff;
+  border: none;
+  width: 960px;
+  height: 559px;
+  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
+  /*тень из PS конвертируется в css неточно; вставить картинкой?*/
+  position: relative;
+}
+
+.modal-close-btn {
   position: absolute;
   display: block;
   padding: 0;
@@ -219,23 +343,15 @@ a:focus image {
   transition: all 200ms;
   border: none;
   border-radius: 50%;
-  background: center/100% url("../img/modal-close.svg") no-repeat;
+  background: url("../img/modal-close.svg") no-repeat center/100%;
 }
 
-.form-cancel-btn:hover,
-.form-cancel-btn:focus {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
   opacity: 1;
   outline: none;
 }
 
-.form-cancel-btn:active {
+.modal-close-btn:active {
   opacity: 0.3;
-}
-.form-popup input[type="submit"] {
-  display:block;
-  width:200px;
-}
-.form-popup label {
-  display:block;
-  margin-bottom:5px;
 }

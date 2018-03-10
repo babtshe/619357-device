@@ -56,7 +56,7 @@
         </li>
       </ul>
     </nav>
-    <form action="http://echo.htmlacademy.ru" method="get" name="header-search">
+    <form class="form-search" action="http://echo.htmlacademy.ru" method="get" name="header-search">
       <input class="search-field" type="search" name="header-search" placeholder="Поиск по сайту">
       <input class="search-btn hidden" type="submit" value="Найти">
     </form>
@@ -151,58 +151,70 @@
     <section class="catalog">
       <h2 class="visually-hidden">Список товаров</h2>
       <ul class="catalog-list">
+        <!-- Кнопки сравнения и добавления в корзину можно сделать тоже без js,
+        если обернуть каталог в форму и по нажатию отправлять ИД товара.
+      Для магазина это же критичная функциональность? -->
         <!-- add article -->
         <li class="catalog-item">
-          <a href="beginner-stick.html">
-            <h3>
-              <span class="catalog-item-name">Любительская селфи-палка</span>
-              <span class="catalog-item-price">500 руб.</span>
-            </h3>
-            <div class="catalog-item-image">
-              <img src="img/item-1.jpg" alt="Любительская селфи-палка" width="360" height="380">
-            </div>
-          </a>
-          <button class="btn basket-add" formaction="#">В корзину</button>
-          <button class="compare-add" formaction="#">Сравнить</button>
+          <article>
+            <a href="beginner-stick.html">
+              <h3>
+                <span class="catalog-item-name">Любительская селфи-палка</span>
+                <span class="catalog-item-price">500 руб.</span>
+              </h3>
+              <div class="catalog-item-image">
+                <img src="img/item-1.jpg" alt="Любительская селфи-палка" width="360" height="380">
+              </div>
+            </a>
+            <button class="btn basket-add" formaction="#">В корзину</button>
+            <button class="compare-add" formaction="#">Сравнить</button>
+          </article>
+        </li>
+
+        <li class="catalog-item">
+          <article>
+            <a href="pro-stick.html">
+              <h3>
+                <span class="catalog-item-name">Профессиональная селфи-палка</span>
+                <span class="catalog-item-price">1500 руб.</span>
+              </h3>
+              <div class="catalog-item-image">
+                <img src="img/item-2.jpg" alt="Профессиональная селфи-палка" width="360" height="380">
+              </div>
+            </a>
+            <button class="btn basket-add" formaction="#">В корзину</button>
+            <button class="compare-add" formaction="#">Сравнить</button>
+          </article>
         </li>
         <li class="catalog-item">
-          <a href="pro-stick.html">
-            <h3>
-              <span class="catalog-item-name">Профессиональная селфи-палка</span>
-              <span class="catalog-item-price">1500 руб.</span>
-            </h3>
-            <div class="catalog-item-image">
-              <img src="img/item-2.jpg" alt="Профессиональная селфи-палка" width="360" height="380">
-            </div>
-          </a>
-          <button class="btn basket-add" formaction="#">В корзину</button>
-          <button class="compare-add" formaction="#">Сравнить</button>
-        </li>
-        <li class="catalog-item">
-          <a href="waterproof-stick.html">
-            <h3>
-              <span class="catalog-item-name">Непотопляемая селфи-палка</span>
-              <span class="catalog-item-price">2500 руб.</span>
-            </h3>
-            <div class="catalog-item-image">
-              <img src="img/item-3.jpg" alt="Непотопляемая селфи-палка" width="360" height="380">
-            </div>
-          </a>
-          <button class="btn basket-add" formaction="#">В корзину</button>
-          <button class="compare-add" formaction="#">Сравнить</button>
+          <article>
+            <a href="waterproof-stick.html">
+              <h3>
+                <span class="catalog-item-name">Непотопляемая селфи-палка</span>
+                <span class="catalog-item-price">2500 руб.</span>
+              </h3>
+              <div class="catalog-item-image">
+                <img src="img/item-3.jpg" alt="Непотопляемая селфи-палка" width="360" height="380">
+              </div>
+            </a>
+            <button class="btn basket-add" formaction="#">В корзину</button>
+            <button class="compare-add" formaction="#">Сравнить</button>
+          </article>
         </li>
         <li class="catalog-item new">
-          <a href="follow-me-stick.html">
-            <h3>
-              <span class="catalog-item-name">Селфи-палка «Следуй за мной»</span>
-              <span class="catalog-item-price">4900 руб.</span>
-            </h3>
-            <div class="catalog-item-image">
-              <img src="img/item-4.jpg" alt="Селфи-палка «Следуй за мной»" width="360" height="380">
-            </div>
-          </a>
-          <button class="btn basket-add" formaction="#">В корзину</button>
-          <button class="compare-add" formaction="#">Сравнить</button>
+          <article>
+            <a href="follow-me-stick.html">
+              <h3>
+                <span class="catalog-item-name">Селфи-палка «Следуй за мной»</span>
+                <span class="catalog-item-price">4900 руб.</span>
+              </h3>
+              <div class="catalog-item-image">
+                <img src="img/item-4.jpg" alt="Селфи-палка «Следуй за мной»" width="360" height="380">
+              </div>
+            </a>
+            <button class="btn basket-add" formaction="#">В корзину</button>
+            <button class="compare-add" formaction="#">Сравнить</button>
+          </article>
         </li>
       </ul>
       <nav class="pagination">

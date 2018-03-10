@@ -56,7 +56,7 @@
         </li>
       </ul>
     </nav>
-    <form action="http://echo.htmlacademy.ru" method="post" name="header-search">
+    <form class="form-search" action="http://echo.htmlacademy.ru" method="post" name="header-search">
       <input class="search-field" type="search" name="header-search" placeholder="Поиск по сайту">
       <input class="search-btn hidden" type="submit" value="Найти">
     </form>
@@ -191,7 +191,7 @@
       </svg>
       <ul class="brands-list">
         <li>
-          <a href="#">
+          <a href="#" aria-label="dji">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>dji</desc>
               <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-1.jpg"
@@ -200,7 +200,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" aria-label="spgadgets">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>spgadgets</desc>
               <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-2.jpg"
@@ -209,7 +209,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" aria-label="gopro">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>gopro</desc>
               <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-3.jpg"
@@ -218,7 +218,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" aria-label="vive">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>vive</desc>
               <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-4.jpg"
@@ -243,17 +243,23 @@
       <h2>Контакты</h2>
       <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
       <div class="map">
-        <a class="map-popup" href="#">
-          <!-- тут будет карта -->
-          <img src="img/map.jpg" alt="схема проезда" height="222" width="560">
+        <a class="map-popup-link" href="#popup-map" aria-label="Карта проезда">
+
+          <img src="img/map.jpg" alt="схема проезда: улица Строителей 15" height="222" width="560">
         </a>
+      </div>
+      <div class="overlay" id="popup-map">
+        <form class="map-popup" action="#">
+          <!-- тут будет интерактивная карта -->
+          <button class="modal-close-btn" formaction="#contact" formnovalidate></button>
+        </form>
       </div>
       <a class="btn" href="#popup-writeus">Напишите нам</a>
       <div class="overlay" id="popup-writeus">
         <form class="form-popup" action="http://echo.htmlacademy.ru" method="post" name="form-contact">
           <div class="form-field">
             <label for="name-field">Ваше имя:</label>
-            <input type="text" id="name-field" name="name" placeholder="Имя Фамилия" required>
+            <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
           </div>
           <div class="form-field">
             <label for="email-field">Ваш e-mail:</label>
@@ -264,7 +270,7 @@
             <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
           </div>
           <input class="btn" type="submit" value="Отправить">
-          <button class="form-cancel-btn" formaction="#contact" formnovalidate></button>
+          <button class="modal-close-btn" formaction="#contact" formnovalidate></button>
         </form>
       </div>
     </section>
