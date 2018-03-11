@@ -256,7 +256,7 @@
       </div>
       <a class="btn" href="#popup-writeus">Напишите нам</a>
       <div class="overlay" id="popup-writeus">
-        <form class="form-popup" action="http://echo.htmlacademy.ru" method="post" name="form-contact">
+        <form class="form-popup" action="http://echo.htmlacademy.ru" name="form-contact">
           <div class="form-field">
             <label for="name-field">Ваше имя:</label>
             <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
@@ -269,7 +269,7 @@
             <label for="message-field">Текст письма:</label>
             <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
           </div>
-          <input class="btn" type="submit" value="Отправить">
+          <input class="btn" type="submit" formmethod="post" value="Отправить">
           <button class="modal-close-btn" formaction="#contact" formnovalidate></button>
         </form>
       </div>
