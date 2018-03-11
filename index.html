@@ -56,7 +56,7 @@
         </li>
       </ul>
     </nav>
-    <form class="form-search" action="http://echo.htmlacademy.ru" method="post" name="header-search">
+    <form class="form-search" action="http://echo.htmlacademy.ru" method="get" name="header-search">
       <input class="search-field" type="search" name="header-search" placeholder="Поиск по сайту">
       <input class="search-btn" type="submit" value="Найти">
     </form>
@@ -161,20 +161,17 @@
         <li id="delivery">
           <a class="btn" href="#delivery">Доставка</a>
           <h2 class="delivery">Доставка</h2>
-          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,
-            поднимая его на ваш этаж.</p>
+          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
         </li>
         <li id="warranty">
           <a class="btn" href="#warranty">Гарантия</a>
           <h2 class="warranty">Гарантия</h2>
-          <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не
-            дом, конечно же.</p>
+          <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
         </li>
         <li id="credit">
           <a class="btn" href="#credit">Кредит</a>
           <h2 class="credit">Кредит</h2>
-          <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита.
-            Выгодные для нашего банка, разумеется.</p>
+          <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
         </li>
       </ul>
     </section>
@@ -183,46 +180,41 @@
       <svg class="filter-container" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
         <defs>
           <filter id="filtersPicture">
-            <feComposite result="inputTo_38" in="SourceGraphic" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0"
-            />
+            <feComposite result="inputTo_38" in="SourceGraphic" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0" k4="0" />
             <feColorMatrix id="filter_38" type="saturate" values="0" data-filterid="38" />
           </filter>
         </defs>
       </svg>
       <ul class="brands-list">
         <li>
-          <a href="#" aria-label="dji">
+          <a href="#" title="DJI">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>dji</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-1.jpg"
-              />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-1.jpg" />
             </svg>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="spgadgets">
+          <a href="#" title="SP Gadgets">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>spgadgets</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-2.jpg"
-              />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-2.jpg" />
             </svg>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="gopro">
+          <a href="#" title="GoPro">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>gopro</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-3.jpg"
-              />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-3.jpg" />
             </svg>
           </a>
         </li>
         <li>
-          <a href="#" aria-label="vive">
+          <a href="#" title="VIVE">
             <svg class="brand-grayscale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 100" width="260" height="100">
               <desc>vive</desc>
-              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-4.jpg"
-              />
+              <image filter="url(#filtersPicture)" x="0" y="0" width="260" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/logo-4.jpg" />
             </svg>
           </a>
         </li>
@@ -249,29 +241,33 @@
         </a>
       </div>
       <div class="overlay" id="popup-map">
-        <form class="map-popup" action="#">
-          <!-- тут будет интерактивная карта -->
-          <button class="modal-close-btn" formaction="#contact" formnovalidate></button>
-        </form>
+        <div class="popup-map">
+          <address>
+            <!-- тут будет интерактивная карта -->
+          </address>
+          <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+        </div>
       </div>
       <a class="btn" href="#popup-writeus">Напишите нам</a>
       <div class="overlay" id="popup-writeus">
-        <form class="form-popup" action="http://echo.htmlacademy.ru" name="form-contact">
-          <div class="form-field">
-            <label for="name-field">Ваше имя:</label>
-            <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
-          </div>
-          <div class="form-field">
-            <label for="email-field">Ваш e-mail:</label>
-            <input type="email" id="email-field" name="email" placeholder="email@example.com" required>
-          </div>
-          <div class="form-field flex-wide">
-            <label for="message-field">Текст письма:</label>
-            <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
-          </div>
-          <input class="btn" type="submit" formmethod="post" value="Отправить">
-          <button class="modal-close-btn" formaction="#contact" formnovalidate></button>
-        </form>
+        <div class="popup-writeus">
+          <form class="form-contact" action="http://echo.htmlacademy.ru" name="form-contact" method="post">
+            <div class="form-field">
+              <label for="name-field">Ваше имя:</label>
+              <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
+            </div>
+            <div class="form-field">
+              <label for="email-field">Ваш e-mail:</label>
+              <input type="email" id="email-field" name="email" placeholder="email@example.com" required>
+            </div>
+            <div class="form-field flex-wide">
+              <label for="message-field">Текст письма:</label>
+              <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
+            </div>
+            <input class="btn" type="submit" value="Отправить">
+          </form>
+          <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+        </div>
       </div>
     </section>
   </main>
