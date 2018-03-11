@@ -3,39 +3,43 @@
 */
 
 @font-face {
-  font-family: 'Gilroy';
-  src: local('Gilroy Light'), local('Gilroylight'), url(../gilroylight.woff) format('woff');
   font-weight: normal;
+  font-family: "Gilroy";
   font-style: normal;
+
+  src: local("Gilroy Light"), local("Gilroylight"), url(../gilroylight.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: local('Gilroy ExtraBold'), local('GilroyextraBold'), url(../gilroyextrabold.woff) format('woff');
   font-weight: bold;
+  font-family: "Gilroy";
   font-style: normal;
+
+  src: local("Gilroy ExtraBold"), local("GilroyextraBold"), url(../gilroyextrabold.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans'), local('OpenSans-Regular'), url(../opensans.woff) format('woff');
   font-weight: normal;
+  font-family: "Open Sans";
   font-style: normal;
+
+  src: local("Open Sans"), local("OpenSans-Regular"), url(../opensans.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(../opensanslight.woff) format('woff');
   font-weight: 300;
+  font-family: "Open Sans";
   font-style: normal;
+
+  src: local("Open Sans Light"), local("OpenSans-Light"), url(../opensanslight.woff) format("woff");
 }
 
 input,
 textarea,
 .sort-type-list {
-  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 p,
@@ -45,12 +49,12 @@ p,
 .search-btn,
 .phone,
 .footer-address {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 300;
   font-size: 15px;
   line-height: 30px;
-  letter-spacing:0.01em;
-  font-weight: 300;
+  font-family: "Open Sans", Arial, sans-serif;
   font-style: normal;
+  letter-spacing: 0.01em;
 }
 
 .catalog-nav-btn,
@@ -58,10 +62,10 @@ p,
 .btn,
 .catalog-sections-list,
 .form-popup label {
-  font-family: 'Gilroy', Arial, sans-serif;
+  font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-  font-weight: bold;
+  font-family: "Gilroy", Arial, sans-serif;
 }
 
 /*
@@ -70,28 +74,40 @@ p,
 
 .btn {
   display: inline-block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-width: 160px;
+  max-width: 280px;
   padding: 8px 20px;
+  overflow: hidden;
+
+  vertical-align: middle;
+  text-align: center;
+  color: #000000;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000000;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  background-color: #f0c52e;
   border: none;
   outline: none;
-  letter-spacing: 0.2em;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #f0c52e;
-  transition: all 200ms;
-  box-shadow: inset 0px 16px 0px 0px #ffffff, inset 0px -16px 0px 0px #ffffff;
-  /*в IE не работает, придется строить костыль
+  -webkit-box-shadow: inset 0 16px 0 0 #ffffff, inset 0 -16px 0 0 #ffffff;
+          box-shadow: inset 0 16px 0 0 #ffffff, inset 0 -16px 0 0 #ffffff;
+
+  -webkit-transition: all 200ms;
+       -o-transition: all 200ms;
+          transition: all 200ms;
+  /*TODO: в IE не работает, придется строить костыль
   gradient? ::before ::after?*/
 }
 
 .btn:hover,
 .btn:focus,
 .btn:active {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn:active {
@@ -104,10 +120,12 @@ p,
 
 .visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
+
   width: 1px;
   height: 1px;
   margin: -1px;
+
+  clip: rect(0 0 0 0);
 }
 
 .hidden {
@@ -120,49 +138,46 @@ p,
 
 .brand-grayscale image {
   opacity: 0.2;
-  transition: opacity 200ms;
+
+  -webkit-transition: opacity 200ms;
+       -o-transition: opacity 200ms;
+          transition: opacity 200ms;
 }
 
 .brand-grayscale:hover image,
 a:focus image {
   opacity: 1;
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 /*
 * — forms —
 */
 .form-search {
-  display:flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .search-field {
-  box-sizing:border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 355px;
+  padding: 8px 20px 8px 39px;
+
   color: #000000;
+
   background-color: transparent;
   background-image: url("../img/search.svg");
-  background-repeat:no-repeat;
-  background-position:left 4px bottom 14px;
+  background-repeat: no-repeat;
+  background-position: left 4px bottom 14px;
   border: none;
-  padding: 8px 20px 8px 39px;
-  width: 355px;
- /*TODO fix vertical alignment in IE*/
+  border-bottom: 2px solid transparent;
 }
 
 /*placeholder madness */
 
-.search-field::placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
 .search-field::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.search-field::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.search-field:-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
 
@@ -170,25 +185,30 @@ a:focus image {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.search-field:hover::placeholder {
-  color: rgba(0, 0, 0, 0.6);
+.search-field::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.search-field::placeholder {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .search-field:hover::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.search-field:hover::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.search-field:hover:-moz-placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
 .search-field:hover:-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
+
+.search-field:hover::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.search-field:hover::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 
 .search-field:focus {
   border-bottom: 2px solid #000000;
@@ -198,23 +218,28 @@ a:focus image {
 .search-btn {
   width: 85px;
   height: 49px;
+  padding: 0;
+
   background-color: transparent;
   border: 2px solid #000000;
+  visibility: hidden;
 }
 
-.search-field:focus+.search-btn {
-  display: block;
+.search-field:focus + .search-btn {
+  visibility: visible;
 }
 
 .search-btn:hover {
-  background-color: #000000;
   color: #ffffff;
+
+  background-color: #000000;
 }
 
 .search-btn:active {
-  background-color: #000000;
   color: rgba(255, 255, 255, 0.3);
-  display:block;
+
+  background-color: #000000;
+  visibility: visible;
 }
 
 /*background overlay*/
@@ -222,17 +247,30 @@ a:focus image {
 .overlay {
   position: fixed;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  transition: opacity 200ms;
-  visibility: hidden;
-  opacity: 0;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
   justify-content: center;
   align-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 200ms;
+       -o-transition: opacity 200ms;
+          transition: opacity 200ms;
+
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-align: center;
+  -ms-flex-line-pack: center;
+  -ms-flex-pack: center;
 }
 
 .overlay:target {
@@ -241,55 +279,69 @@ a:focus image {
 }
 
 .form-popup {
-  box-sizing: border-box;
-  padding: 92px 100px 78px;
-  background: #fff;
-  border: none;
-  max-width: 960px;
-  min-width: 560px;
-  min-height: 553px;
-  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
-  /*тень из PS конвертируется в css неточно; вставить картинкой?*/
+  /*TODO: тень из PS конвертируется в css неточно; вставить картинкой?*/
   position: relative;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+      flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 560px;
+  max-width: 960px;
+  min-height: 553px;
+  padding: 92px 100px 78px;
+
+  background: #ffffff;
+  border: none;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
+          box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
+
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -ms-flex-wrap: wrap;
 }
 
 .form-popup input[type="text"],
 .form-popup input[type="email"],
 .form-popup textarea {
-  padding: 15px;
   margin-bottom: 40px;
-  border: none;
-  background-color: rgba(230, 230, 230, 0.5)
+  padding: 15px;
+
+  background-color: rgba(230, 230, 230, 0.5);
+  border: none;;
 }
 
 .form-popup input[type="text"]:hover,
 .form-popup input[type="email"]:hover,
 .form-popup textarea:hover {
-  border: none;
-  background-color: rgba(230, 230, 230, 0.8)
+  background-color: rgba(230, 230, 230, 0.8);
+  border: none;;
+}
+.form-popup input[type="email"]:invalid,
+.form-popup textarea:invalid {
+  outline: none;
+  box-shadow: none;
+  /*TODO: background-color:rgba(237, 181, 181, 0.5);
+ проверить и повесить на поля при отправке формы или потере фокуса
+ */
 }
 
 .form-popup input[type="text"]:focus,
 .form-popup input[type="email"]:focus,
 .form-popup textarea:focus {
-  outline: 3px solid #f0c52e;
   background-color: #ffffff;
+  outline: 3px solid #f0c52e;
 }
 
-.form-popup input[type="text"]:invalid,
-.form-popup input[type="email"]:invalid,
-.form-popup textarea:invalid {
-  /* background-color:rgba(237, 181, 181, 0.5);
- проверить и повесить на поля при отправке формы или потере фокуса
- */
-}
+
 
 .form-popup input[type="text"],
 .form-popup input[type="email"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 360px;
 }
 
@@ -299,13 +351,17 @@ a:focus image {
 
 .form-popup .form-field.flex-wide {
   flex-basis: 100%;
+
+  -ms-flex-preferred-size: 100%;
 }
 
 .form-popup textarea {
-  box-sizing: border-box;
-  overflow: auto;
-  min-height: 155px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
+  min-height: 155px;
+  overflow: auto;
+
   resize: none;
 }
 
@@ -320,36 +376,45 @@ a:focus image {
 }
 
 .map-popup {
-  box-sizing: border-box;
-  padding: none;
-  background: url("../img/map-big.jpg") no-repeat 100% #ffffff;
-  border: none;
+  /*TODO: тень из PS конвертируется в css неточно; вставить картинкой?*/
+  position: relative;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 960px;
   height: 559px;
-  box-shadow: 0px 10px 20px 0px rgba(4, 6, 6, 0.2);
-  /*тень из PS конвертируется в css неточно; вставить картинкой?*/
-  position: relative;
+  padding: 0;
+
+  background: url("../img/map-big.jpg") no-repeat 100% #ffffff;
+  border: none;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
+          box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
 }
 
 .modal-close-btn {
   position: absolute;
-  display: block;
-  padding: 0;
-  width: 55px;
-  height: 55px;
   top: 22px;
   right: 22px;
-  opacity: 0.5;
-  transition: all 200ms;
+
+  display: block;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+
+  background: url("../img/modal-close.svg") no-repeat center/100%;
   border: none;
   border-radius: 50%;
-  background: url("../img/modal-close.svg") no-repeat center/100%;
+  opacity: 0.5;
+
+  -webkit-transition: all 200ms;
+       -o-transition: all 200ms;
+          transition: all 200ms;
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  opacity: 1;
   outline: none;
+  opacity: 1;
 }
 
 .modal-close-btn:active {
