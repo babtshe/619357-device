@@ -3,27 +3,27 @@
 */
 
 @font-face {
-  font-weight: normal;
+  font-weight: 300;
   font-family: "Gilroy";
   font-style: normal;
 
-  src: local("Gilroy Light"), local("Gilroylight"), url(../gilroylight.woff) format("woff");
+  src: local("Gilroy Light"), local("Gilroylight"), url("/fonts/gilroylight.woff") format("woff");
 }
 
 @font-face {
-  font-weight: bold;
+  font-weight: 700;
   font-family: "Gilroy";
   font-style: normal;
 
-  src: local("Gilroy ExtraBold"), local("GilroyextraBold"), url(../gilroyextrabold.woff) format("woff");
+  src: local("Gilroy ExtraBold"), local("GilroyextraBold"), url("/fonts/gilroyextrabold.woff") format("woff");
 }
 
 @font-face {
-  font-weight: normal;
+  font-weight: 400;
   font-family: "Open Sans";
   font-style: normal;
 
-  src: local("Open Sans"), local("OpenSans-Regular"), url(../opensans.woff) format("woff");
+  src: local("Open Sans"), local("OpenSans-Regular"), url("/fonts/opensans.woff") format("woff");
 }
 
 @font-face {
@@ -31,8 +31,61 @@
   font-family: "Open Sans";
   font-style: normal;
 
-  src: local("Open Sans Light"), local("OpenSans-Light"), url(../opensanslight.woff) format("woff");
+  src: local("Open Sans Light"), local("OpenSans-Light"), url("/fonts/opensanslight.woff") format("woff");
 }
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #000000;
+  letter-spacing: 0.01em;
+
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-logo,
+.footer-logo {
+  transition: all 200ms;
+}
+
+
+
+.header-logo[href]:hover,
+.user-nav li:hover,
+.site-nav li:hover,
+.catalog-nav-btn:hover,
+.catalog-nav li:hover,
+.compare:hover,
+.basket:hover,
+.footer-logo[href]:hover,
+.credits:hover,
+.phone:hover {
+  opacity: 0.6;
+}
+
+.header-logo[href]:active,
+.user-nav li:active,
+.site-nav li:active,
+.catalog-nav-btn:active,
+.catalog-nav li:active,
+.compare:active,
+.basket:active,
+.footer-logo[href]:active,
+.credits:active,
+.phone:active {
+  opacity: 0.3;
+}
+
+
 
 input,
 textarea,
@@ -40,21 +93,6 @@ textarea,
   font-size: 14px;
   line-height: 18px;
   font-family: "Open Sans", Arial, sans-serif;
-}
-
-p,
-.user-nav,
-.catalog-nav,
-.search-field,
-.search-btn,
-.phone,
-.footer-address {
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 30px;
-  font-family: "Open Sans", Arial, sans-serif;
-  font-style: normal;
-  letter-spacing: 0.01em;
 }
 
 .catalog-nav-btn,
@@ -69,10 +107,303 @@ p,
 }
 
 /*
+* — header —
+*/
+.header-main {
+  color: inherit;
+
+  background-color: rgba(247,226,150,1);
+}
+.header-main a {
+  color: inherit;
+}
+.header-main ul {
+  list-style: none;
+}
+
+.catalog-nav-btn:hover ~ .catalog-nav {
+  display: block;
+}
+
+.catalog-nav {
+  background-color: rgba(247,226,150,1);
+}
+.catalog-nav:hover {
+  display: block;
+}
+.user-nav {
+  padding: 0;
+}
+.site-nav {
+  padding: 0;
+}
+
+
+.slider::before {
+  content: "";
+
+  display: block; /*TODO: временная заглушка*/
+  height: 113px;
+
+  background-color: rgba(247,226,150,1);
+}
+.slider-slogan {
+  font-weight: bold;
+  font-size: 47px;
+  line-height: 56px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+.slider-list {
+  list-style: none;
+}
+.slider-item-spec td {
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 48px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+
+.slider-item-spec th {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 20px;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/*
+* - catalog-sections
+*/
+
+.catalog-sections-list {
+  display: flex;
+  /*overflow-x:auto;*/
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 80px;
+  padding: none;
+
+  list-style: none;
+}
+.catalog-sections-list li {
+  height: 240px;
+  margin-top: 80px;
+  margin-right: 40px;
+}
+.section-item {
+  position: relative;
+
+  display: block;
+  width: 160px;
+  height: 240px;
+  overflow: hidden;
+
+  color: inherit;
+}
+.section-item::before {
+  content: "";
+
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 33px;
+
+  background-color: rgba(240,197,46,0.5);
+}
+.section-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 160px;
+  height: 160px;
+
+  background-repeat: no-repeat;
+}
+.section-item:hover::before {
+  background-color: rgba(240,197,46,1);
+}
+.section-item:active::after {
+  opacity: 0.3;
+}
+.section-item:active {
+  color: rgba(0,0,0,0.3);
+}
+.section-item.item-vr::after {
+  background-image: url("/img/popular-1.svg");
+  background-position: 31px 52px;
+}
+.section-item.item-monopod::after {
+  background-image: url("/img/popular-2.svg");
+  background-position: 38px 43px;
+}
+.section-item.item-camera::after {
+  background-image: url("/img/popular-3.svg");
+  background-position: 49px 38px;
+}
+.section-item.item-bracelet::after {
+  background-image: url("/img/popular-4.svg");
+  background-position: 28px 50px;
+}
+.section-item.item-watch::after {
+  background-image: url("/img/popular-5.svg");
+  background-position: 55px 32px;
+}
+.section-item.item-quadro::after {
+  background-image: url("/img/popular-6.svg");
+  background-position: 13px 49px;
+}
+
+/*
+* — services —
+*/
+.services {
+  /* background-color:#e5e5e5;*/
+  position: relative;
+}
+.services::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  display: block;
+  width: 100%;
+  height: 100px;
+
+  background-color: #ffffff;
+}
+.services::after {
+  content: "";
+  position: absolute;
+  top: 100px;
+  z-index: -1;
+
+  display: block;
+  width: 100%;
+  height: 288px;
+
+  background-color: #e5e5e5;
+}
+
+.services ul {
+  list-style: none;
+}
+.services h2 {
+  font-weight: bold;
+  font-size: 47px;
+  line-height: 48px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+
+.services p {
+  width: 460px;
+}
+.delivery {
+  background-image: url("/img/delivery.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 0;
+}
+.warranty {
+  background-image: url("/img/warranty.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 0;
+}
+.credit {
+  background-image: url("/img/credit.svg");
+  background-repeat: no-repeat;
+  background-position: 75% 0;
+}
+
+/*
+* — brands —
+*/
+
+.brand-grayscale image {
+  opacity: 0.2;
+
+  -webkit-transition: opacity 200ms;
+          transition: opacity 200ms;
+}
+
+.brand-grayscale:hover image,
+a:focus image {
+  opacity: 1;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.brands ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+.brands li {
+  margin-right: 40px;
+}
+
+/*
+* — about & contacts —
+*/
+/*TODO: заменить обёртку на флекс*/
+.two-column-wrapper {
+  display: flex;
+}
+
+.about h2,
+.contact h2 {
+  position: relative;
+
+  font-weight: bold;
+  font-size: 47px;
+  line-height: 48px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+.about::before,
+.contact::before {
+  content: "";
+  position: absolute;
+
+  display: block;
+  width: 80px;
+  height: 7px;
+
+  background-color: #000000;
+}
+
+.about li {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+
+/*
+* — footer —
+*/
+.footer-main {
+  color: #ffffff;
+
+  background-color: #464646;
+}
+.footer-main ul {
+  list-style: none;
+}
+.footer-main a {
+  color: inherit;
+}
+
+.footer-address {
+  font-style: normal;
+}
+/*
 * — buttons —
 */
 
 .btn {
+  /*TODO: fix outline in chrome*/
+  /*TODO: fix gradient for services block*/
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -91,28 +422,27 @@ p,
   text-overflow: ellipsis;
 
   background-color: #f0c52e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(40%, #ffffff), color-stop(40%, rgba(0, 0, 0, 0))),
+  -webkit-gradient(linear, left bottom, left top, from(#ffffff), color-stop(40%, #ffffff), color-stop(40%, rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 40%, rgba(0, 0, 0, 0) 40%),
+  linear-gradient(to top, #ffffff 0%, #ffffff 40%, rgba(0, 0, 0, 0) 40%);
+  background-repeat: repeat-x;
+  background-position: 0 0;
   border: none;
-  outline: none;
-  -webkit-box-shadow: inset 0 16px 0 0 #ffffff, inset 0 -16px 0 0 #ffffff;
-          box-shadow: inset 0 16px 0 0 #ffffff, inset 0 -16px 0 0 #ffffff;
 
   -webkit-transition: all 200ms;
-       -o-transition: all 200ms;
           transition: all 200ms;
-  /*TODO: в IE не работает, придется строить костыль
-  gradient? ::before ::after?*/
 }
 
 .btn:hover,
-.btn:focus,
 .btn:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  background-position: 0 -20px,0 20px;
 }
 
 .btn:active {
   color: rgba(0, 0, 0, 0.3);
 }
+
 
 /*
 * — accessibility —
@@ -130,25 +460,6 @@ p,
 
 .hidden {
   display: none;
-}
-
-/*
-* — brands —
-*/
-
-.brand-grayscale image {
-  opacity: 0.2;
-
-  -webkit-transition: opacity 200ms;
-       -o-transition: opacity 200ms;
-          transition: opacity 200ms;
-}
-
-.brand-grayscale:hover image,
-a:focus image {
-  opacity: 1;
-  -webkit-filter: none;
-          filter: none;
 }
 
 /*
@@ -185,10 +496,6 @@ a:focus image {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.search-field::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
 .search-field::placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
@@ -201,14 +508,9 @@ a:focus image {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.search-field:hover::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
 .search-field:hover::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
-
 
 .search-field:focus {
   border-bottom: 2px solid #000000;
@@ -263,7 +565,6 @@ a:focus image {
   opacity: 0;
 
   -webkit-transition: opacity 200ms;
-       -o-transition: opacity 200ms;
           transition: opacity 200ms;
 
   -webkit-box-align: center;
@@ -325,7 +626,8 @@ a:focus image {
 .form-contact input[type="email"]:invalid,
 .form-contact textarea:invalid {
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   /*TODO: background-color:rgba(237, 181, 181, 0.5);
  проверить и повесить на поля при отправке формы или потере фокуса
  */
@@ -409,7 +711,6 @@ a:focus image {
   opacity: 0.5;
 
   -webkit-transition: all 200ms;
-       -o-transition: all 200ms;
           transition: all 200ms;
 }
 

@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Academy: Девайс</title>
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header class="header-main">
     <nav class="main-nav">
-      <a class="header-logo main">Device</a>
+      <a class="header-logo">
+        <img src="img/device-logo.svg" alt="Логотип DEVICE" width="163" height="48">
+      </a>
       <ul class="user-nav">
         <li class="login">
           <a href="#">Войти</a>
@@ -61,10 +64,7 @@
       <input class="search-btn" type="submit" value="Найти">
     </form>
     <a class="compare" href="#">Сравнить</a>
-    <div class="basket-container">
-      <a class="basket" href="#">Корзина</a>
-      <a class="checkout hidden" href="#">Оформить заказ</a>
-    </div>
+    <a class="basket" href="#">Корзина</a>
   </header>
   <main class="container-main">
     <h1 class="visually-hidden">Девайс</h1>
@@ -77,7 +77,7 @@
       <ol class="slider-list">
         <li class="slider-item">
           <h2 class="visually-hidden">Палка для селфи</h2>
-          <div class="slider-slogan">Делай селфи, как Бен Стиллер!</div>
+          <div class="slider-slogan">Делай селфи, как&nbsp;Бен&nbsp;Стиллер!</div>
           <img src="img/slider-1.png" alt="селфи-палка" width="384" height="486">
           <p class="slider-description">Самая длинная палка для селфи доступна в нашем магазине.
             <br> Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
@@ -98,7 +98,8 @@
         </li>
         <li class="slider-item">
           <h2 class="visually-hidden">Фитнес-браслет</h2>
-          <div class="slider-slogan">Худеем правильно!</div>
+          <div class="slider-slogan">Худеем
+            <br>правильно!</div>
           <img src="img/slider-2.png" alt="фитнес-браслет" width="385" height="485">
           <p class="slider-description">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
           </p>
@@ -114,7 +115,7 @@
         </li>
         <li class="slider-item">
           <h2 class="visually-hidden">Квадрокоптер</h2>
-          <div class="slider-slogan">Порхает как бабочка, жалит как пчела!</div>
+          <div class="slider-slogan">Порхает&nbsp;как&nbsp;бабочка, жалит&nbsp;как&nbsp;пчела!</div>
           <img src="img/slider-3.png" alt="квадрокоптер" width="526" height="334">
           <p class="slider-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
           </p>
@@ -136,41 +137,41 @@
       <h2 class="visually-hidden">Каталог товаров</h2>
       <ul class="catalog-sections-list">
         <li>
-          <a href="catalog.html#">Виртуальная реальность</a>
+          <a class="section-item item-vr" href="catalog.html#">Виртуальная реальность</a>
         </li>
         <li>
-          <a href="catalog.html#">Моноподы для селфи</a>
+          <a class="section-item item-monopod" href="catalog.html#">Моноподы для&nbsp;селфи</a>
         </li>
         <li>
-          <a href="catalog.html#">Экшн-камеры</a>
+          <a class="section-item item-camera" href="catalog.html#">Экшн-камеры</a>
         </li>
         <li>
-          <a href="catalog.html#">Фитнес-браслеты</a>
+          <a class="section-item item-bracelet" href="catalog.html#">Фитнес-браслеты</a>
         </li>
         <li>
-          <a href="catalog.html#">Умные часы</a>
+          <a class="section-item item-watch" href="catalog.html#">Умные часы</a>
         </li>
         <li>
-          <a href="catalog.html#">Квадрокоптеры</a>
+          <a class="section-item item-quadro" href="catalog.html#">Квадрокоптеры</a>
         </li>
       </ul>
     </section>
     <section class="services">
       <h2 class="visually-hidden">Услуги</h2>
       <ul>
-        <li id="delivery">
+        <li class="delivery" id="delivery">
           <a class="btn" href="#delivery">Доставка</a>
-          <h2 class="delivery">Доставка</h2>
+          <h2>Доставка</h2>
           <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
         </li>
-        <li id="warranty">
+        <li class="warranty" id="warranty">
           <a class="btn" href="#warranty">Гарантия</a>
-          <h2 class="warranty">Гарантия</h2>
+          <h2>Гарантия</h2>
           <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
         </li>
-        <li id="credit">
+        <li class="credit" id="credit">
           <a class="btn" href="#credit">Кредит</a>
-          <h2 class="credit">Кредит</h2>
+          <h2>Кредит</h2>
           <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
         </li>
       </ul>
@@ -220,60 +221,64 @@
         </li>
       </ul>
     </section>
-    <section class="about">
-      <h2>О нас</h2>
-      <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-      <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
-      <ul class="main-list">
-        <li>Деловые Линии</li>
-        <li>Автотрейдинг</li>
-        <li>ЖелДорЭкспедиция</li>
-      </ul>
-      <a class="btn" href="#">Подробнее о нас</a>
-    </section>
-    <section class="contact" id="contact">
-      <h2>Контакты</h2>
-      <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
-      <div class="map">
-        <a class="map-popup-link" href="#popup-map" aria-label="Карта проезда">
+    <div class="two-column-wrapper">
+      <section class="about">
+        <h2>О нас</h2>
+        <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+        <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+        <ul class="main-list">
+          <li>Деловые Линии</li>
+          <li>Автотрейдинг</li>
+          <li>ЖелДорЭкспедиция</li>
+        </ul>
+        <a class="btn" href="#">Подробнее о нас</a>
+      </section>
+      <section class="contact" id="contact">
+        <h2>Контакты</h2>
+        <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
+        <div class="map">
+          <a class="map-popup-link" href="#popup-map" aria-label="Карта проезда">
 
-          <img src="img/map.jpg" alt="схема проезда: улица Строителей 15" height="222" width="560">
-        </a>
-      </div>
-      <div class="overlay" id="popup-map">
-        <div class="popup-map">
-          <address>
-            <!-- тут будет интерактивная карта -->
-          </address>
-          <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+            <img src="img/map.jpg" alt="схема проезда: улица Строителей 15" height="222" width="560">
+          </a>
         </div>
-      </div>
-      <a class="btn" href="#popup-writeus">Напишите нам</a>
-      <div class="overlay" id="popup-writeus">
-        <div class="popup-writeus">
-          <form class="form-contact" action="http://echo.htmlacademy.ru" name="form-contact" method="post">
-            <div class="form-field">
-              <label for="name-field">Ваше имя:</label>
-              <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
-            </div>
-            <div class="form-field">
-              <label for="email-field">Ваш e-mail:</label>
-              <input type="email" id="email-field" name="email" placeholder="email@example.com" required>
-            </div>
-            <div class="form-field flex-wide">
-              <label for="message-field">Текст письма:</label>
-              <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
-            </div>
-            <input class="btn" type="submit" value="Отправить">
-          </form>
-          <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+        <div class="overlay" id="popup-map">
+          <div class="popup-map">
+            <address>
+              <!-- тут будет интерактивная карта -->
+            </address>
+            <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+          </div>
         </div>
-      </div>
-    </section>
+        <a class="btn" href="#popup-writeus">Напишите нам</a>
+        <div class="overlay" id="popup-writeus">
+          <div class="popup-writeus">
+            <form class="form-contact" action="http://echo.htmlacademy.ru" name="form-contact" method="post">
+              <div class="form-field">
+                <label for="name-field">Ваше имя:</label>
+                <input type="text" id="name-field" name="name" placeholder="Имя Фамилия">
+              </div>
+              <div class="form-field">
+                <label for="email-field">Ваш e-mail:</label>
+                <input type="email" id="email-field" name="email" placeholder="email@example.com" required>
+              </div>
+              <div class="form-field flex-wide">
+                <label for="message-field">Текст письма:</label>
+                <textarea id="message-field" name="message" placeholder="В свободной форме" required></textarea>
+              </div>
+              <input class="btn" type="submit" value="Отправить">
+            </form>
+            <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
   <footer class="footer-main">
     <div class="footer-logo-container">
-      <a class="footer-logo main">Device</a>
+      <a class="footer-logo">
+        <img src="img/device-logo-footer.svg" alt="Логотип DEVICE" width="163" height="48">
+      </a>
     </div>
     <address class="footer-address">
       г. Москва, ул. Строителей, 15
@@ -301,9 +306,7 @@
       </li>
     </ul>
     <a class="compare footer" href="#">Сравнить</a>
-    <div class="basket-container footer">
-      <a class="basket" href="#">Корзина</a>
-      <a class="checkout hidden" href="#">Оформить заказ</a>
+    <a class="basket footer" href="#">Корзина</a>
     </div>
     <a class="phone" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
     <div class="social">

@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Александр Бабченко](https://up.htmlacademy.ru/htmlcss/20/user/619357).
-* Наставник: [Алексей Альшевский] (https://up.htmlacademy.ru/htmlcss/20/user/568227).
+* Наставник: [Алексей Альшевский](https://up.htmlacademy.ru/htmlcss/20/user/568227).
 
 ---
 
