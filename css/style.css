@@ -131,7 +131,6 @@ textarea,
 /*
 * — header — ==============================================================================================================
 */
-/*FIXME: в эксплорере как обычно нихрена не работает - исправить заголовок*/
 /*FIXME: placeholder text letter-spacing*/
 .header-main {
   position: relative;
@@ -219,13 +218,12 @@ textarea,
 .site-nav > li:first-child {
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
-  padding-left: 0;
-
-  -webkit-box-flex: 0;
+  padding:0;
 }
 .site-nav > li:last-child {
   margin-left: auto;
   padding-right: 0;
+  text-align: right;
 }
 
 .site-nav a {
@@ -436,7 +434,6 @@ textarea,
 * — slider — =====================================================================================================
 */
 
-/*FIXME: Чертов эксплорер, опять в нем все развалилось.*/
 .slider {
   position: relative;
 
@@ -506,6 +503,7 @@ textarea,
   padding: 0;
 
   list-style: none;
+  overflow:hidden;
 
   counter-reset: slide-number;
 
@@ -547,6 +545,7 @@ textarea,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex:0 0 50%;
   -ms-flex-direction: column;
       flex-direction: column;
   padding-left: 20px;
