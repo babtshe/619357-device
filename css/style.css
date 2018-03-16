@@ -592,6 +592,7 @@ textarea,
 .slider-description {
   margin-top: 0;
   margin-bottom: 42px;
+  width:485px;
 }
 .slide-content .btn {
   margin-bottom: 50px;
@@ -632,8 +633,9 @@ textarea,
 * - catalog-sections ===================================================================================================
 */
 .catalog-sections {
-  width: 1160px;
-  margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto 82px auto;
+  padding:50px 20px 0 20px;
 }
 .catalog-sections-list {
   display: -webkit-box;
@@ -641,7 +643,7 @@ textarea,
   display: flex;
       flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 80px;
+
   padding: 0;
 
   list-style: none;
@@ -651,7 +653,7 @@ textarea,
 }
 .catalog-sections-list li {
   height: 240px;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-right: 40px;
 }
 .catalog-sections-list li:last-child {
@@ -727,56 +729,80 @@ textarea,
 * — services — ================================================================================================
 */
 .services {
-  /* background-color:#e5e5e5;*/
-  position: relative;
+   background-color:#e5e5e5;
+   margin-bottom:95px;
 }
 .services::before {
-  /*TODO: убрать эту хрень*/
   content: "";
-  position: absolute;
+  display:block;
   z-index: -1;
-
-  display: block;
   width: 100%;
   height: 100px;
-
+  margin-bottom:-100px;
   background-color: #ffffff;
 }
-.services::after {
-  content: "";
-  position: absolute;
-  top: 100px;
-  z-index: -1;
 
-  display: block;
-  width: 100%;
-  height: 288px;
-
-  background-color: #e5e5e5;
+.services-container {
+  width:1200px;
+  padding:0 20px 70px 20px;
+  margin:0 auto;
+  display:flex;
 }
-
-.services ul {
+.services-buttons {
+  margin-top:80px;
+  width:160px;
+}
+.services-buttons .btn {
+  margin-bottom:24px;
+}
+.services-list {
+  position:relative;
   list-style: none;
+  padding:0;
+  margin:0;
+}
+.services-list::before {
+  content: "";
+  left:117px;
+  position:absolute;
+  display:block;
+  height:319px;
+  width:7px;
+  background-color:#000000;
+}
+.services-list li {
+  margin-left:240px;
+  margin-top:73px;
+  padding-right:240px;
+
+}
+.services-list li:not(:first-child) {
+  display:none;
 }
 .services h2 {
   font-weight: bold;
   font-size: 47px;
   line-height: 48px;
   font-family: "Gilroy", Arial, sans-serif;
+  letter-spacing: 0.02em;
+  margin-top:0;
+  margin-bottom:32px;
+
 }
 
 .services p {
   width: 460px;
+  letter-spacing: 0.02em;
 }
 .delivery {
   background-image: url("../img/delivery.svg");
   background-repeat: no-repeat;
-  background-position: 75% 0;
+  background-position: right 5px top 12px;
 }
 .warranty {
   background-image: url("../img/warranty.svg");
   background-repeat: no-repeat;
-  background-position: 75% 0;
+  background-position: 100% 0;
 }
 .credit {
   background-image: url("../img/credit.svg");
@@ -788,8 +814,9 @@ textarea,
 * — brands — =========================================================================================================
 */
 .brands {
-  width: 1160px;
-  margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto 84px auto;
+  padding:0 20px;
 }
 .brand-grayscale image {
   opacity: 0.2;
@@ -826,44 +853,80 @@ a:focus image {
 /*
 * — about & contacts — =======================================================================================================
 */
-/*TODO: заменить обёртку на флекс*/
 .two-column-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /*justify-content: flex-start;*/
+  width:1200px;
+  margin: 0 auto;
+  padding:0 20px;
 }
+.about::before,
+.contact::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 7px;
+  margin-bottom:45px;
 
+  background-color: #000000;
+}
 .about h2,
 .contact h2 {
-  position: relative;
-
+  margin-top:0;
+  margin-bottom:43px;
   font-weight: bold;
   font-size: 47px;
   line-height: 48px;
   font-family: "Gilroy", Arial, sans-serif;
 }
-.about p {
-  width: 460px;
+.about p,
+.contact p{
+  margin:30px 0 30px 0;
+  letter-spacing:normal;
 }
-.about::before,
-.contact::before {
-  content: "";
-  position: absolute;
+.about {
 
-  display: block;
-  width: 80px;
-  height: 7px;
+  width:560px;
+  margin-right:20px;
+  flex:0 1 auto;
 
-  background-color: #000000;
 }
-
+.about ul {
+  padding:0;
+  margin:66px 0 54px 2px;
+  list-style:none;
+}
 .about li {
+  background-image: url("../img/icon-list.svg");
+  background-repeat:no-repeat;
+  background-position:0 center;
+  padding-left:33px;
   font-weight: bold;
   font-size: 16px;
   line-height: 40px;
   font-family: "Gilroy", Arial, sans-serif;
 }
 
+.about p {
+  width: 475px;
+  }
+.about .btn{
+  width: 260px;
+}
+
+.contact {
+  margin-left:20px;
+  width:560px;
+}
+.contact .map {
+  margin-top:40px;
+  margin-bottom:59px;
+}
+.contact .btn {
+  width:260px;
+}
 /*
 * =======================================================================CATALOG=======================================
 */
@@ -1312,11 +1375,6 @@ a:focus image {
   color: #f7e184;
 
   background: #000000;
-}
-
-.about .btn,
-contact .btn {
-  width: 260px;
 }
 
 /*
