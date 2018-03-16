@@ -58,7 +58,8 @@ body {
   line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #000000;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.01em; /*TODO:FIXME: похоже эта штука сначала переводится в пиксели, а только потом наследуется.
+  Поэтому такое попадалово со шрифтами. исправить везде где шрифт отличается от дефолтнго. */
 
   background-color: #ffffff;
 }
@@ -236,7 +237,7 @@ textarea,
   position: absolute;
   top: 155px;
   left: 0;
-  z-index: 10;
+  z-index: 2;
 
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,31 +436,193 @@ textarea,
 * — slider — =====================================================================================================
 */
 
+/*FIXME: Чертов эксплорер, опять в нем все развалилось.*/
+.slider {
+  position: relative;
+
+  width: 1200px;
+  margin: 0 auto 25px;
+  padding: 0 20px;
+}
 .slider::before {
   content: "";
 
-  display: block; /*TODO: временная заглушка*/
+  display: block; /*TODO: временная заглушка, хотя она клёвая, может оставить?*/
   height: 113px;
+  margin-bottom: -113px;
 
   background-color: rgba(247,226,150,1);
+  background-clip: content-box;
+}
+.slider-labels {
+  position: absolute;
+  right: 103px;
+  bottom: 158px;
+  z-index: 1;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slider-control {
+  display: none;
+}
+.slider-selector {
+  display: block;
+  width: 12px;
+  height: 12px;
+  /*border-radius: 50%; малюсенькие кнопочки, со скруглением труднее нажимать*/
+  margin-left: 21px;
+
+  background-color: #ffffff;
+  background-image: url("../img/slider-button-empty.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+/*CSS slider multi-level selector 1*/
+.slider-control:nth-child(1):checked ~ .slider-labels label:nth-child(1),
+.slider-control:nth-child(2):checked ~ .slider-labels label:nth-child(2),
+.slider-control:nth-child(3):checked ~ .slider-labels label:nth-child(3) {
+  background-image: url("../img/slider-button.svg");
+}
+/*CSS slider multi-level selector 2*/
+.slider-control:nth-child(1):checked ~ .slider-list li:nth-child(1),
+.slider-control:nth-child(2):checked ~ .slider-list li:nth-child(2),
+.slider-control:nth-child(3):checked ~ .slider-list li:nth-child(3) {
+  -ms-flex-order: -1;
+  order: -1;
+
+  visibility: visible;
+
+  -webkit-box-ordinal-group: 0;
+}
+.slider-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      flex-flow: row nowrap;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  counter-reset: slide-number;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -ms-flex-flow: row nowrap;
+}
+.slider-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+
+  visibility: hidden;
+
+  -webkit-box-flex: 0;
+}
+.slider-item::before {
+  content: "";
+
+  counter-increment: slide-number;
+}
+
+.slide-image {
+  -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+  padding-right: 20px;
+
+  -webkit-box-flex: 0;
+}
+.slide-image img {
+  display: block;
+  margin: 0 auto;
+}
+.slide-content {
+  position: relative;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding-left: 20px;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+}
+.slide-content::before {
+  content: "";
+
+  display: block;
+  width: 100px;
+  height: 7px;
+  margin: 40px 0 34px 0;
+
+  background-color: #ffffff;
+}
+.slide-content::after {
+  content: "0"counter(slide-number);
+  position: absolute;
+  top: -12px;
+  right: 44px;
+
+  display: block;
+
+  font-weight: bold;
+  font-size: 179.2px;
+  line-height: 179.2px;
+  font-family: "Gilroy", Arial, sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.01em;
 }
 .slider-slogan {
+  z-index: 1;
+
+  margin-bottom: 20px;
+
   font-weight: bold;
   font-size: 47px;
   line-height: 56px;
   font-family: "Gilroy", Arial, sans-serif;
+  letter-spacing: 0.01em;
 }
-.slider-list {
-  list-style: none;
+.slider-description {
+  margin-top: 0;
+  margin-bottom: 42px;
+}
+.slide-content .btn {
+  margin-bottom: 50px;
+}
+.slider-item-spec {
+  -ms-flex-order: 4;
+  order: 4;
+  align-self: flex-start;
+  padding-bottom: 20px;
+
+  border-spacing: 0;
+
+  -webkit-box-ordinal-group: 5;
+  -ms-flex-item-align: start;
 }
 .slider-item-spec td {
+  width: 140px;
+  padding: 0;
+
   font-weight: 300;
   font-size: 36px;
   line-height: 48px;
   font-family: "Gilroy", Arial, sans-serif;
 }
-
+.slider-item-spec td:first-child {
+  width: 160px;
+}
 .slider-item-spec th {
+  padding: 6px 0 0 0;
+
   font-weight: 300;
   font-size: 13px;
   line-height: 20px;
@@ -469,7 +632,10 @@ textarea,
 /*
 * - catalog-sections ===================================================================================================
 */
-
+.catalog-sections {
+  width: 1160px;
+  margin: 0 auto;
+}
 .catalog-sections-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -488,6 +654,9 @@ textarea,
   height: 240px;
   margin-top: 80px;
   margin-right: 40px;
+}
+.catalog-sections-list li:last-child {
+  margin-right: 0;
 }
 .section-item {
   position: relative;
@@ -563,6 +732,7 @@ textarea,
   position: relative;
 }
 .services::before {
+  /*TODO: убрать эту хрень*/
   content: "";
   position: absolute;
   z-index: -1;
@@ -618,7 +788,10 @@ textarea,
 /*
 * — brands — =========================================================================================================
 */
-
+.brands {
+  width: 1160px;
+  margin: 0 auto;
+}
 .brand-grayscale image {
   opacity: 0.2;
 
@@ -638,6 +811,7 @@ a:focus image {
   display: -ms-flexbox;
   display: flex;
       flex-wrap: wrap;
+  padding: 0;
 
   list-style: none;
 
@@ -645,6 +819,9 @@ a:focus image {
 }
 .brands li {
   margin-right: 40px;
+}
+.brands li:last-child {
+  margin-right: 0;
 }
 
 /*
@@ -1174,6 +1351,7 @@ contact .btn {
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1;
 
   display: -webkit-box;
   display: -ms-flexbox;
