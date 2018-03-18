@@ -69,7 +69,9 @@ a {
 img {
   max-width: 100%;
 }
-
+.nobr	{
+  white-space:nowrap;
+}
 
 .header-logo[href]:hover,
 .compare:hover,
@@ -952,6 +954,7 @@ about & contacts — ===========================================================
 }
 /*
 CATALOG=======================================================================CATALOG=======================================
+============================================================================================================================
 */
 .container-catalog {
   min-width:1200px;
@@ -1008,8 +1011,9 @@ CATALOG=======================================================================CA
   color: rgba(0,0,0,0.1);
 }
 
-
-/*sorting*/
+/*
+sorting — =======================================================================================================
+*/
 .sort-row {
   background-color:rgba(0,0,0,0.08);
   width:100%;
@@ -1086,9 +1090,8 @@ CATALOG=======================================================================CA
 }
 
 /*
-filters-catalog
+filters-catalog — =======================================================================================================
 */
-
 .filter {
 width:348px;
   flex-grow:1;
@@ -1231,9 +1234,8 @@ legend + .form-field {
   width: 200px;
 }
 
-
 /*
-catalog-list
+catalog-list — =======================================================================================================
 */
 .catalog {
   width:852px;
@@ -1261,12 +1263,48 @@ catalog-list
   margin:40px 0 0 40px;
   position: relative;
 }
-.catalog-item header {
+.catalog-item.new::before {
+position:absolute;
+top:29px;
+right:27px;
+width:60px;
+height:61px;
+border-radius:50%;
+border:2px solid #000000;
+content:"new";
+text-transform: uppercase;
+line-height: 58px;
+vertical-align: middle;
+font-size: 14px;
+font-weight:bold;
+text-align: center;
+font-family: "Gilroy", Arial, sans-serif;
+
+letter-spacing: 0.05em;
+opacity:0.1;
+}
+.catalog-item {
+  display:flex;
+  flex-flow: column nowrap;
+}
+.picture-controls {
+  order:-1;
+}
+header > .item-link {
   width: 360px;
   height: 86px;
+  padding-top:32px;
+  margin-left:-1px;
   overflow:hidden;
+  display:flex;
+  justify-content: space-between;
 }
 .catalog-item-name {
+  display:block;
+  width:260px;
+  margin:0;
+  overflow:hidden;
+  letter-spacing: 0.01em;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
@@ -1281,6 +1319,7 @@ catalog-list
   color: #464646;
 }
 .catalog-item-image {
+  position:relative;
   width: 360px;
   height: 380px;
 }
@@ -1296,10 +1335,11 @@ catalog-list
 
   background-color: rgba(238,238,238,0.7);
 }
-.catalog-item-image:hover::after,
-.item-link:hover ~ .basket-add,
-.catalog-item-image:hover ~ .compare-add {
+.picture-controls:hover .catalog-item-image::after,
+.picture-controls:hover .basket-add,
+.picture-controls:hover .compare-add {
   display: block;
+
 }
 
 .btn.basket-add {
@@ -1311,11 +1351,14 @@ catalog-list
 }
 .compare-add {
   position:absolute;
-  top:229px;
-  left:109px;
+  top:222px;
+  left:102px;
   font-size: 13px;
   line-height: 20px;
   display:none;
+  font-weight:300;
+  font-family: "Open Sans", Arial, sans-serif;
+
 
   background: transparent;
   border: none;
@@ -1323,13 +1366,15 @@ catalog-list
 }
 .compare-add:hover {
   opacity: 1;
+  cursor:pointer;
 }
 .compare-add:active {
   outline: none;
   opacity: 0.2;
 }
+
 /*
-pagination
+pagination — =======================================================================================================
 */
 .pagination {
   width:760px;
@@ -1350,14 +1395,6 @@ pagination
   list-style: none;
 
   background-color: rgba(0,0,0,0.08);
-
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -ms-flex-align: center;
-  -ms-flex-flow: row nowrap;
-  -ms-flex-pack: center;
 }
 .pagination-list li {
   padding: 0 15px;
@@ -1612,6 +1649,7 @@ buttons — ====================================================================
   letter-spacing: 0.2em;
   white-space: nowrap;
   text-overflow: clip;
+  font-family: "Gilroy", Arial, sans-serif;
 
   background-color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
@@ -1631,6 +1669,7 @@ buttons — ====================================================================
   background-repeat: repeat-x;
   background-position: 0 0;
   border: none;
+  cursor:pointer;
 
   -webkit-transition: all 200ms;
           transition: all 200ms;
@@ -1766,6 +1805,7 @@ forms — ======================================================================
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+background-color:rgba(237, 181, 181, 0.5)
   /*TODO: background-color:rgba(237, 181, 181, 0.5);
  проверить и повесить на поля при отправке формы или потере фокуса
  */
