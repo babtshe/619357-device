@@ -1206,6 +1206,11 @@ legend + .form-field {
   background-image:url("../img/checkbox-on.svg");
 }
 
+[type="checkbox"] + label:focus,
+[type="radio"] + label:focus{
+  outline:1px dotted rgba(0, 0, 0, 0.5);
+}
+
 .form-filter .form-field:last-child {
   margin-bottom:-8px;
 }
