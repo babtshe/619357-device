@@ -73,6 +73,12 @@ img {
   white-space:nowrap;
 }
 
+.set-width {
+  width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
 .header-logo[href]:hover,
 .compare:hover,
 .site-nav-footer li:hover,
@@ -413,6 +419,7 @@ textarea,
   width: 85px;
   height: 49px;
   padding: 0;
+  cursor: pointer;
 
   background-color: transparent;
   border: 2px solid #000000;
@@ -441,10 +448,7 @@ textarea,
 
 .slider {
   position: relative;
-
-  width: 1200px;
-  margin: 0 auto 25px;
-  padding: 0 20px;
+margin-bottom:25px;
 }
 .slider::before {
   content: "";
@@ -640,9 +644,8 @@ textarea,
 catalog-sections ===================================================================================================
 */
 .catalog-sections {
-  width: 1200px;
-  margin: 0 auto 82px auto;
-  padding: 50px 20px 0 20px;
+  margin-bottom:82px;
+  padding-top:50px;
 }
 .catalog-sections-list {
   display: -webkit-box;
@@ -653,16 +656,15 @@ catalog-sections ===============================================================
   padding: 0;
 
   list-style: none;
-  /*overflow-x:auto;*/
 
   -ms-flex-wrap: wrap;
 }
 .catalog-sections-list li {
-  height: 240px;
+ min-height: 240px;
   margin-top: 20px;
   margin-right: 40px;
 }
-.catalog-sections-list li:last-child {
+.catalog-sections-list li:nth-child(6n) {
   margin-right: 0;
 }
 .section-item {
@@ -670,9 +672,8 @@ catalog-sections ===============================================================
 
   display: block;
   width: 160px;
-  height: 240px;
-  overflow: hidden;
-
+ min-height: 240px;
+word-wrap: break-word;
   color: inherit;
 }
 .section-item::before {
@@ -756,9 +757,7 @@ services — ===================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 70px 20px;
+  padding-bottom:70px;
 }
 .services-buttons {
   width: 160px;
@@ -830,9 +829,7 @@ services — ===================================================================
 brands — =========================================================================================================
 */
 .brands {
-  width: 1200px;
-  margin: 0 auto 84px auto;
-  padding: 0 20px;
+  margin-bottom:84px;
 }
 .brand-grayscale image {
   opacity: 0.2;
@@ -862,7 +859,7 @@ a:focus image {
 .brands li {
   margin-right: 40px;
 }
-.brands li:last-child {
+.brands li:nth-child(4n) {
   margin-right: 0;
 }
 
@@ -874,9 +871,7 @@ about & contacts — ===========================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 1200px;
-  margin: 0 auto 82px auto;
-  padding: 0 20px;
+  margin-bottom:82px;
 }
 .about::before,
 .contact::before {
@@ -965,14 +960,14 @@ CATALOG=======================================================================CA
   line-height: 48px;
   font-family: "Gilroy", Arial, sans-serif;
   letter-spacing: 0.013em;
-  padding:0 80px 0 79px;
-  width:1200px;
-  margin:37px auto 0 auto;
+  padding-right:80px;
+  padding-left:79px;
+  margin-top:37px;
 }
 .breadcrumbs {
-  padding:0 80px 0 79px;
-  width:1200px;
-  margin:24px auto 0 auto;
+  padding-right:80px;
+  padding-left:79px;
+  margin-top:24px;
   font-weight: 300;
   font-size: 14px;
   line-height: 24px;
@@ -1020,10 +1015,8 @@ sorting — ====================================================================
   margin-top:46px;
 }
 .sort {
-  width:1200px;
   padding:0 20px 0 420px;
   display:flex;
-  margin: 0 auto 0 auto;
 }
 .sort h2 {
   margin:0;
@@ -1158,6 +1151,7 @@ fieldset + fieldset {
 .form-filter label {
   font-size: 14px;
   line-height: 40px;
+  cursor: pointer;
 }
 legend + .form-field {
   margin-top:18px;
@@ -1192,7 +1186,7 @@ legend + .form-field {
   opacity:0.25;
 }
 [type="checkbox"]:not(:disabled):hover + label::before,
-[type="radio"]:not(:disabled):hover + label::before {
+[type="radio"]:not(:disabled):not(:checked):hover + label::before {
   opacity:0.6;
 }
 [type="checkbox"]:active + label::before,
@@ -1232,6 +1226,9 @@ legend + .form-field {
   background-position: 0 0;
 }
 [type="radio"]:checked + label::before {
+  background-image:url("../img/radio-on.svg");
+}
+[type="radio"]:not(:disabled):not(:checked):active + label::before {
   background-image:url("../img/radio-on.svg");
 }
   .form-filter .btn {
@@ -1474,9 +1471,6 @@ footer — =====================================================================
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 
   -webkit-box-pack: center;
   -ms-flex-pack: center;
