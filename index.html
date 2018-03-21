@@ -10,75 +10,82 @@
 </head>
 
 <body>
-  <header class="header-main">
-    <nav class="main-nav">
-      <a class="header-logo">
-        <img src="img/device-logo.svg" alt="Логотип DEVICE" width="163" height="48">
-      </a>
-      <ul class="site-nav">
-        <li class="sub-menu">
-          <a class="catalog-link" href="catalog.html">Каталог товаров</a>
-          <ul class="catalog-nav">
-            <li class="catalog-group">
-              <ul>
-                <li>
-                  <a href="catalog.html#">Виртуальная реальность</a>
-                </li>
-                <li>
-                  <a href="catalog.html#">Моноподы для селфи</a>
-                </li>
-                <li>
-                  <a href="catalog.html#">Экшн-камеры</a>
-                </li>
-              </ul>
-            </li>
-            <li class="catalog-group">
-              <ul>
-                <li>
-                  <a href="catalog.html#">Фитнес-браслеты</a>
-                </li>
-                <li>
-                  <a href="catalog.html#">Умные часы</a>
-                </li>
-              </ul>
-            </li>
-            <li class="catalog-group">
-              <ul>
-                <li>
-                  <a href="catalog.html#">Квадрокоптеры</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+  <header class="header-main set-width">
+    <div class="header-row">
+      <form class="form-search" action="https://echo.htmlacademy.ru" method="get">
+        <input class="search-field" type="search" name="search-field" placeholder="Поиск по сайту">
+        <input class="search-btn" type="submit" value="Найти" tabindex="-1">
+      </form>
+      <ul class="user-nav">
+        <li class="login">
+          <a href="#">Войти</a>
         </li>
-        <li>
-          <a href="index.html#delivery">Доставка</a>
+        <li class="profile hidden">
+          <a href="profile.html">Валентин Петухов</a>
         </li>
-        <li>
-          <a href="index.html#warranty">Гарантия</a>
-        </li>
-        <li>
-          <a href="index.html#contact">Контакты</a>
+        <li class="logout hidden">
+          <a href="#">Выйти</a>
         </li>
       </ul>
-    </nav>
-    <form class="form-search" action="https://echo.htmlacademy.ru" method="get">
-      <input class="search-field" type="search" name="search-field" placeholder="Поиск по сайту">
-      <input class="search-btn" type="submit" value="Найти" tabindex="-1">
-    </form>
-    <ul class="user-nav">
-      <li class="login">
-        <a href="#">Войти</a>
-      </li>
-      <li class="profile hidden">
-        <a href="profile.html">Валентин Петухов</a>
-      </li>
-      <li class="logout hidden">
-        <a href="#">Выйти</a>
-      </li>
-    </ul>
-    <a class="compare" href="#">Сравнить</a>
-    <a class="basket" href="#">Корзина</a>
+      <ul class="shop-controls">
+        <li><a class="compare" href="#">Сравнить</a></li>
+        <li><a class="basket" href="#">Корзина</a></li>
+      </ul>
+    </div>
+    <div class="header-row">
+      <nav class="main-nav">
+        <a class="header-logo">
+          <img src="img/device-logo.svg" alt="Логотип DEVICE" width="163" height="48">
+        </a>
+        <ul class="site-nav">
+          <li class="sub-menu">
+            <a class="catalog-link" href="catalog.html">Каталог товаров</a>
+            <ul class="catalog-nav">
+              <li class="catalog-group">
+                <ul>
+                  <li>
+                    <a href="catalog.html#">Виртуальная реальность</a>
+                  </li>
+                  <li>
+                    <a href="catalog.html#">Моноподы для селфи</a>
+                  </li>
+                  <li>
+                    <a href="catalog.html#">Экшн-камеры</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="catalog-group">
+                <ul>
+                  <li>
+                    <a href="catalog.html#">Фитнес-браслеты</a>
+                  </li>
+                  <li>
+                    <a href="catalog.html#">Умные часы</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="catalog-group">
+                <ul>
+                  <li>
+                    <a href="catalog.html#">Квадрокоптеры</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html#delivery">Доставка</a>
+          </li>
+          <li>
+            <a href="index.html#warranty">Гарантия</a>
+          </li>
+          <li>
+            <a href="index.html#contact">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
   </header>
   <main class="container-main">
     <h1 class="visually-hidden">Девайс</h1>
@@ -188,20 +195,20 @@
       <div class="services-container set-width">
         <h2 class="visually-hidden">Услуги</h2>
         <div class="services-buttons">
-          <a class="btn delivery" href="#delivery">Доставка</a>
-          <a class="btn warranty" href="#warranty">Гарантия</a>
-          <a class="btn credit" href="#credit">Кредит</a>
+          <a class="btn service-button delivery current" href="#delivery" onclick="servicesTab(event, 'delivery')">Доставка</a>
+          <a class="btn service-button warranty" href="#warranty" onclick="servicesTab(event, 'warranty')">Гарантия</a>
+          <a class="btn service-button credit" href="#credit" onclick="servicesTab(event, 'credit')">Кредит</a>
         </div>
         <ul class="services-list">
-          <li class="delivery" id="delivery">
+          <li class="service-item delivery current" id="delivery">
             <h2>Доставка</h2>
             <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
           </li>
-          <li class="warranty" id="warranty">
+          <li class="service-item warranty" id="warranty">
             <h2>Гарантия</h2>
             <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
           </li>
-          <li class="credit" id="credit">
+          <li class="service-item credit" id="credit">
             <h2>Кредит</h2>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
           </li>
@@ -280,7 +287,9 @@
               <iframe width="960" height="559" src="https://maps.google.com/maps?width=960&amp;height=559&amp;hl=ru&amp;q=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9%2C%2015+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed">
               </iframe>
             </address>
-            <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+            <a class="modal-close-btn" href="#contact">
+              <span class="visually-hidden">Закрыть</span>
+            </a>
           </div>
         </div>
         <a class="btn" href="#popup-writeus">Напишите нам</a>
@@ -301,7 +310,9 @@
               </div>
               <input class="btn" type="submit" value="Отправить">
             </form>
-            <a class="modal-close-btn" href="#contact" title="Закрыть"></a>
+            <a class="modal-close-btn" href="#contact">
+              <span class="visually-hidden">Закрыть</span>
+            </a>
           </div>
         </div>
       </section>
@@ -346,16 +357,24 @@
     <div class="footer-row set-width">
       <ul class="social-list">
         <li>
-          <a class="facebook" href="#" title="Facebook"></a>
+          <a class="facebook" href="#" title="Facebook">
+            <span class="visually-hidden">Facebook</span>
+          </a>
         </li>
         <li>
-          <a class="instagram" href="#" title="Instagram"></a>
+          <a class="instagram" href="#" title="Instagram">
+            <span class="visually-hidden">Instagram</span>
+          </a>
         </li>
         <li>
-          <a class="twitter" href="#" title="Twitter"></a>
+          <a class="twitter" href="#" title="Twitter">
+            <span class="visually-hidden">Twitter</span>
+          </a>
         </li>
       </ul>
-      <a class="credits" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Academy"></a>
+      <a class="credits" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Academy">
+        <span class="visually-hidden">HTML Academy</span>
+      </a>
     </div>
   </footer>
   <script src="js/script.js"></script>
