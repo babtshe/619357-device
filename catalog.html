@@ -51,7 +51,7 @@
                     <a href="catalog.html#">Виртуальная реальность</a>
                   </li>
                   <li>
-                    <a href="catalog.html#">Моноподы для селфи</a>
+                    <a>Моноподы для селфи</a>
                   </li>
                   <li>
                     <a href="catalog.html#">Экшн-камеры</a>
@@ -134,11 +134,16 @@
         <form class="form-filter" action="https://echo.htmlacademy.ru" method="get" name="form-filter">
           <fieldset>
             <legend>Стоимость</legend>
-            <div class="double-side-range">
-              <!-- <input type="range" name="price-range" id="range-start" min="0" max="10000" step="500" value="0">
-            <input type="range" name="price-range" id="range-end" min="0" max="10000" step="500" value="10000">
-            <label for="range-start">От</label>
-            <label for="range-end">До</label> -->
+            <div class="double-range">
+              <input class="hidden" type="text" name="price-start" id="range-start" value="0">
+              <input class="hidden" type="text" name="price-end" id="range-end" value="5000">
+              <div class="price-slider">
+                <div class="slider-range" style="width: 60%; left: 0%;"></div>
+                <a class="slider-handle price-from" href="#" style="left: 0%;"></a>
+                <a class="slider-handle price-to" href="#" style="left: 60%;"></a>
+                <span class="value-from" style="left: 0%;">от 0</span>
+                <span class="value-to"style="left: 60%;">до 5000</span>
+              </div>
             </div>
           </fieldset>
           <fieldset>

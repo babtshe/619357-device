@@ -82,6 +82,9 @@ img {
 .outlined:active {
   outline: 1px dotted rgba(0, 0, 0, 0.5);
 }
+iframe {
+	border: none;
+}
 
 .header-logo[href]:hover,
 .compare:hover,
@@ -1189,6 +1192,9 @@ sorting — ====================================================================
   background-repeat: no-repeat;
   background-position: bottom 2px center;
 }
+.sort a:not([href]):hover {
+  cursor:default;
+}
 .sort a[href] {
   opacity: 0.3;
 }
@@ -1244,12 +1250,15 @@ filters-catalog — ============================================================
   padding-left: 7px;
 }
 .form-filter fieldset {
-  padding: 0 0 0 0;
+  padding: 0;
 
   border: none;
 }
 fieldset + fieldset {
-  margin-top: 39px;
+  margin-top: 26px;
+}
+.form-filter fieldset:last-of-type {
+  margin-top:39px;
 }
 .form-filter legend {
   font-weight: bold;
@@ -1270,13 +1279,59 @@ fieldset + fieldset {
 
   background-color: #000000;
 }
-.double-side-range {
+/*
+double-slider =========================================================
+*/
+.double-range {
+ position:relative;
   width: 212px;
-  height: 40px;
+  height: 53px;
   margin-top: 25px;
   margin-left: -6px;
 
-  background-color: rgba(240,197,46,0.5);
+}
+
+.price-slider {
+  position: absolute;
+  height: 2px;
+  width: 196px;
+  left: 10px;
+  top: 10px;
+  background-color:#dbdbdb;
+}
+
+.slider-range {
+  position: absolute;
+  top: 0px;
+  background-color:#91c92f;
+  height: 2px;
+}
+
+.slider-handle {
+  position: absolute;
+  display: block;
+  margin-left:-10px;
+  margin-top: -10px;
+  width: 20px;
+  height: 22px;
+  background-image: url("../img/filter-button.svg");
+  background-position: 0 0;
+  background-repeat:no-repeat;
+}
+.value-from,
+.value-to {
+  position:absolute;
+  margin-left:-5px;
+  margin-top:12px;
+  line-height:24px;
+  letter-spacing: normal;
+  font-size: 14px;
+  font-family: "Gilroy", Arial, sans-serif;
+  font-weight:300;
+  color:rgba(0,0,0,0.2);
+}
+.value-to {
+  margin-left:-30px;
 }
 .form-filter label {
   font-size: 14px;
@@ -1593,6 +1648,9 @@ pagination — =================================================================
 
   opacity: 0.3;
 }
+.pagination a:not([href]):hover {
+  cursor:default;
+}
 
 .page-previous a,
 .page-next a,
@@ -1627,6 +1685,7 @@ pagination — =================================================================
 .page a[href]:active {
   opacity: 1;
 }
+
 /*
 footer — ==========================================================================================================
 */
