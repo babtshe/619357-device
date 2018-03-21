@@ -78,6 +78,10 @@ img {
   margin:0 auto;
   padding:0 20px;
 }
+.outlined:focus,
+.outlined:active {
+  outline:1px dotted rgba(0, 0, 0, 0.5);
+}
 
 .header-logo[href]:hover,
 .compare:hover,
@@ -452,12 +456,12 @@ flex-grow:1;
 
 .slider {
   position: relative;
-margin-bottom:25px;
+margin-bottom:22px;
 }
 .slider::before {
   content: "";
 
-  display: block; /*TODO: временная заглушка, хотя она клёвая, может оставить?*/
+  display: block;
   height: 113px;
   margin-bottom: -113px;
 
@@ -467,7 +471,7 @@ margin-bottom:25px;
 .slider-labels {
   position: absolute;
   right: 103px;
-  bottom: 158px;
+  bottom: 161px;
   z-index: 1;
 
   display: -webkit-box;
@@ -544,14 +548,14 @@ margin-bottom:25px;
 .slide-image {
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
-  padding:2px 20px 2px 4px;
+  padding:2px 20px 0 0;
 
   -webkit-box-flex: 0;
 }
 .slide-image img {
   display: block;
   margin:0 auto;
-  max-width:550px;
+  max-width:560px;
   max-height:500px;
 }
 .slide-content {
@@ -624,8 +628,12 @@ margin-bottom:25px;
 
   -webkit-box-ordinal-group: 5;
   -ms-flex-item-align: start;
+  display:flex;
+  flex-wrap:wrap;
+  list-style: none;
+  padding-left:0px;
 }
-.slider-item-spec td {
+.slider-item-spec .attr-value {
   width: 140px;
   padding: 0;
 
@@ -633,12 +641,14 @@ margin-bottom:25px;
   font-size: 36px;
   line-height: 48px;
   font-family: "Gilroy", Arial, sans-serif;
+  word-wrap: break-word;
 }
-.slider-item-spec td:first-child {
+.slider-item-spec .attr-value:first-child {
   width: 160px;
 }
-.slider-item-spec th {
+.slider-item-spec .attr-name {
   padding: 6px 0 0 0;
+  word-wrap: break-word;
 
   font-weight: 300;
   font-size: 13px;
@@ -839,23 +849,34 @@ visibility:visible;
 
   letter-spacing: 0.02em;
 }
-.delivery {
-  background-image: url("../img/delivery.svg");
+.service-item::after {
+  position:absolute;
+  top:0;
+  right:0;
+  content:"";
+  display:block;
+  width:200px;
+  height:200px;
   background-repeat: no-repeat;
-  background-position: right 5px top 12px;
+  background-position: 0 0;
 }
-.warranty {
+.services-list .delivery::after {
+  top:12px;
+  right:-58px;
+  background-image: url("../img/delivery.svg");
+}
+.services-list .warranty::after {
+  top:-12px;
+  right:-43px;
   background-image: url("../img/warranty.svg");
-  background-repeat: no-repeat;
-  background-position: 100% 0;
 }
 .services-list .credit::before {
   top:135px;
 }
-.credit {
+.services-list .credit::after {
+  top:-12px;
+  right:-34px;
   background-image: url("../img/credit.svg");
-  background-repeat: no-repeat;
-  background-position: 75% 0;
 }
 .services-list .warranty::before {
   top:71px;
@@ -1303,6 +1324,7 @@ catalog-list — ===============================================================
 }
 .catalog-item.new::before {
 position:absolute;
+z-index:1;
 top:29px;
 right:27px;
 width:60px;
