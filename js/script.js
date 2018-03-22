@@ -24,62 +24,71 @@ function mouseMove(event) {
   console.log(event.currentTarget.pageX);
 }
 */
-//links================================================================================
 
-/*
-var elements = document.querySelectorAll('a[href$="index.html#delivery"]');
-for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener('click', tabClicker);
+//external slider links================================================================================
+if (location.hash) { //например, если ссылка снаружи
+  hashWatcher();
 }
-var elements = document.querySelectorAll('a[href$="index.html#warranty"]');
-for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener('click', tabClicker);
+window.addEventListener("hashchange", hashWatcher, false); //следим за сменой якоря
+function hashWatcher(event) {
+  var hashstr = location.hash.split('#')[1];
+  tabClicker(hashstr);
 }
 
+function tabClicker(hash) {
+  var button = document.querySelector('.service-button.' + hash);
+  var slide = document.getElementById(hash);
 
-function tabClicker(event) {
-  event.currentTarget.style.background = 'red';
-  event.preventDefault();
-  location.href = 'index.html';
-  var button = document.querySelector('.service-button:last-of-type');
-
-  if (button) {
-    button.style.background = 'red';
-    //button.click();
+  if (button && slide) { //если такая кнопочка и слайд есть в слайдере, то переключаем
+    initialiseTabs();
+    button.classList.add("current");
+    slide.classList.add("current");
   }
 }
-*/
 
 //slider============================================================================
-function servicesTab(event, tabId) {
-  var i, serviceitem, servicebuttons; /* переменные*/
-  serviceitem = document.getElementsByClassName("service-item");
-  //прячем слайды
-  for (i = 0; i < serviceitem.length; i++) {
-    serviceitem[i].classList.remove("current");
-  }
-  //выключаем кнопки
-  servicebuttons = document.getElementsByClassName("service-button");
-  for (i = 0; i < servicebuttons.length; i++) {
-    servicebuttons[i].classList.remove("current");
-  }
+var buttons = document.querySelectorAll('.service-button'); //найдем все кнопки от слайдера
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', servicesTab, false);
+}
+
+function servicesTab(event) {
+  initialiseTabs();
+  var tabId = event.currentTarget.href.split('#')[1];
   document.getElementById(tabId).classList.add("current");
   if (event.currentTarget.classList.contains("service-button")) {
     event.currentTarget.classList.add("current");
     event.preventDefault();
+    window.history.pushState("", document.title, window.location.pathname);
   }
 }
-// forms========================================================
+
+function initialiseTabs() {
+  var serviceitem = document.getElementsByClassName("service-item");
+  //прячем слайды
+  for (var i = 0; i < serviceitem.length; i++) {
+    serviceitem[i].classList.remove("current");
+  }
+  //выключаем кнопки
+  var servicebuttons = document.getElementsByClassName("service-button");
+  for (var i = 0; i < servicebuttons.length; i++) {
+    servicebuttons[i].classList.remove("current");
+  }
+}
+// forms validate========================================================
 var formFields = document.querySelectorAll('.form-contact input[type="text"], .form-contact textarea, .form-contact input[type="email"]');
 var formSubmit = document.querySelector('.form-contact input[type="submit"]');
-var contactLink = document.querySelector('.contact-form-link');
-formSubmit.addEventListener('click', validateAll, false);
+
+if (formSubmit) {
+  formSubmit.addEventListener('click', validateAll, false);
+}
 initialiseForm();
+
 function initialiseForm() {
   for (var i = 0; i < formFields.length; i++) {
     formFields[i].addEventListener('blur', validate, false);
     formFields[i].classList.remove("validate");
-}
+  }
 }
 
 function validate(event) {
@@ -90,4 +99,49 @@ function validateAll(event) {
   for (var i = 0; i < formFields.length; i++) {
     formFields[i].className += " validate";
   }
+}
+//forms show==============================================================================
+var mapLink = document.querySelector('.map-popup-link');
+var mapOverlay = document.getElementById('popup-map');
+if (mapLink) {//map
+  mapLink.addEventListener('click', function (event) {
+    mapOverlay.classList.add('show');
+    event.preventDefault();
+    window.addEventListener("keydown", function (event) {
+      if (event.keyCode === 27) {
+        if (mapOverlay.classList.contains("show")) {
+          mapOverlay.classList.remove("show");
+        }
+      }
+    });
+    var formClose = mapOverlay.querySelector('.modal-close-btn');
+    if(formClose) {
+      formClose.addEventListener('click', function(event) {
+        mapOverlay.classList.remove('show');
+        event.preventDefault();
+      });
+    }
+  }, false);
+}
+var contactLink = document.querySelector('.form-contact-link');
+var formOverlay = document.getElementById('popup-writeus');
+if (contactLink) {//contact
+  contactLink.addEventListener('click', function (event) {
+    formOverlay.classList.add('show');
+    event.preventDefault();
+    window.addEventListener("keydown", function (event) {
+      if (event.keyCode === 27) {
+        if (formOverlay.classList.contains("show")) {
+          formOverlay.classList.remove("show");
+        }
+      }
+    });
+    var formClose = formOverlay.querySelector('.modal-close-btn');
+    if(formClose) {
+      formClose.addEventListener('click', function(event) {
+        formOverlay.classList.remove('show');
+        event.preventDefault();
+      });
+    }
+  }, false);
 }

@@ -68,6 +68,7 @@ a {
 }
 img {
   max-width: 100%;
+  height:auto;
 }
 .nobr {
   white-space: nowrap;
@@ -807,11 +808,7 @@ services — ===================================================================
 
   background-color: #ffffff;
 }
-/*
-.service-item:target {
-  z-index:0;
-visibility:visible;
-}*/
+
 .services-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2002,7 +1999,8 @@ forms — ======================================================================
   -ms-flex-pack: center;
 }
 
-.overlay:target {
+.overlay:target,
+.overlay.show {
   visibility: visible;
   opacity: 1;
 }
