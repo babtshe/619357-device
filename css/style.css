@@ -794,6 +794,7 @@ services — ===================================================================
 .services {
   margin-bottom: 49px;
   padding-bottom: 46px;
+  min-width:1200px;
 
   background-color: #e5e5e5;
 }
@@ -1691,6 +1692,7 @@ footer — =====================================================================
   overflow: hidden;
 
   color: #ffffff;
+  min-width:1200px;
 
   background-color: #464646;
 }
