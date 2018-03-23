@@ -68,7 +68,7 @@ a {
 }
 img {
   max-width: 100%;
-  height:auto;
+  height: auto;
 }
 .nobr {
   white-space: nowrap;
@@ -84,7 +84,7 @@ img {
   outline: 1px dotted rgba(0, 0, 0, 0.5);
 }
 iframe {
-	border: none;
+  border: none;
 }
 
 .header-logo[href]:hover,
@@ -147,7 +147,6 @@ textarea,
 * — header — ==============================================================================================================
 */
 /*FIXME: placeholder text letter-spacing*/
-/*FIXME: оберточку для заголовка с паддингами по 20 пикселей, чтобы не вплотную к границам прилипал.*/
 .header-main {
   position: relative;
 
@@ -792,9 +791,9 @@ catalog-sections ===============================================================
 services — ================================================================================================
 */
 .services {
+  min-width: 1200px;
   margin-bottom: 49px;
   padding-bottom: 46px;
-  min-width:1200px;
 
   background-color: #e5e5e5;
 }
@@ -1191,7 +1190,7 @@ sorting — ====================================================================
   background-position: bottom 2px center;
 }
 .sort a:not([href]):hover {
-  cursor:default;
+  cursor: default;
 }
 .sort a[href] {
   opacity: 0.3;
@@ -1256,7 +1255,7 @@ fieldset + fieldset {
   margin-top: 26px;
 }
 .form-filter fieldset:last-of-type {
-  margin-top:39px;
+  margin-top: 39px;
 }
 .form-filter legend {
   font-weight: bold;
@@ -1281,55 +1280,63 @@ fieldset + fieldset {
 double-slider =========================================================
 */
 .double-range {
- position:relative;
+  position: relative;
+
   width: 212px;
   height: 53px;
   margin-top: 25px;
   margin-left: -6px;
-
 }
 
 .price-slider {
   position: absolute;
-  height: 2px;
-  width: 196px;
-  left: 10px;
   top: 10px;
-  background-color:#dbdbdb;
+  left: 10px;
+
+  width: 196px;
+  height: 2px;
+
+  background-color: #dbdbdb;
 }
 
 .slider-range {
   position: absolute;
-  top: 0px;
-  background-color:#91c92f;
+  top: 0;
+
   height: 2px;
+
+  background-color: #91c92f;
 }
 
 .slider-handle {
   position: absolute;
+
   display: block;
-  margin-left:-10px;
-  margin-top: -10px;
   width: 20px;
   height: 22px;
+  margin-top: -10px;
+  margin-left: -10px;
+
   background-image: url("../img/filter-button.svg");
+  background-repeat: no-repeat;
   background-position: 0 0;
-  background-repeat:no-repeat;
 }
 .value-from,
 .value-to {
-  position:absolute;
-  margin-left:-5px;
-  margin-top:12px;
-  line-height:24px;
-  letter-spacing: normal;
+  position: absolute;
+
+  margin-top: 12px;
+  margin-left: -5px;
+
+  font-weight: 300;
   font-size: 14px;
+  line-height: 24px;
   font-family: "Gilroy", Arial, sans-serif;
-  font-weight:300;
-  color:rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.2);
+  letter-spacing: normal;
 }
 .value-to {
-  margin-left:-30px;
+  margin-left: -30px;
 }
 .form-filter label {
   font-size: 14px;
@@ -1647,7 +1654,7 @@ pagination — =================================================================
   opacity: 0.3;
 }
 .pagination a:not([href]):hover {
-  cursor:default;
+  cursor: default;
 }
 
 .page-previous a,
@@ -1688,11 +1695,11 @@ pagination — =================================================================
 footer — ==========================================================================================================
 */
 .footer-main {
+  min-width: 1200px;
   padding: 65px 0;
   overflow: hidden;
 
   color: #ffffff;
-  min-width:1200px;
 
   background-color: #464646;
 }
@@ -1760,8 +1767,8 @@ footer — =====================================================================
   background-image: url("../img/user-footer.svg");
 }
 .footer .logout {
-  margin-right: 22px;;
-  margin-left: -22px;
+  margin-right: 22px;
+  margin-left: -22px;;
 }
 .footer.compare {
   padding-top: 0;
@@ -2054,7 +2061,7 @@ forms — ======================================================================
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
- /* background-color: rgba(237, 181, 181, 0.5);*/
+  /* background-color: rgba(237, 181, 181, 0.5);*/
   /*TODO: background-color:rgba(237, 181, 181, 0.5);
  проверить и повесить на поля при отправке формы или потере фокуса
  */
