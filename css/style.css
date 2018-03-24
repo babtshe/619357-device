@@ -223,12 +223,13 @@ textarea,
 .logout {
   display: inline-block;
   padding-left: 15px;
-  color:rgba(0, 0, 0, 0.3);
 
   vertical-align: top;
+  color: rgba(0, 0, 0, 0.3);
 }
 .logout:hover {
-  color:#000000;
+  color: #000000;
+
   opacity: 0.6;
 }
 .shop-controls {
@@ -347,9 +348,10 @@ textarea,
 }
 .catalog-nav a:not([href]),
 .catalog-nav a:not([href]):hover,
-.catalog-nav a:not([href]):active{
-  cursor:default;
-  color:rgba(0, 0, 0, 0.6);
+.catalog-nav a:not([href]):active {
+  color: rgba(0, 0, 0, 0.6);
+
+  cursor: default;
 }
 .catalog-group ul {
   width: 200px;
@@ -836,7 +838,8 @@ services — ===================================================================
   pointer-events: none;
 }
 .service-button:not(:hover) {
-  transition: none;
+  -webkit-transition: none;
+          transition: none;
 }
 .services-list {
   position: relative;
@@ -1327,9 +1330,11 @@ double-slider =========================================================
   background-position: 0 0;
 }
 .slider-handle:active {
-margin-top:-10px;
-margin-left:-11px;
-transform: scale(1.1);
+  margin-top: -10px;
+  margin-left: -11px;
+
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .value-from,
 .value-to {
@@ -1775,14 +1780,16 @@ footer — =====================================================================
 .footer .logout {
   margin-right: 22px;
   margin-left: -22px;
-  color:rgba(255, 255, 255, 0.3);
+
+  color: rgba(255, 255, 255, 0.3);
 }
 .footer .logout:hover {
-  color:#ffffff;
-  opacity:0.6;
+  color: #ffffff;
+
+  opacity: 0.6;
 }
 .footer .logout:active {
-  opacity:0.3;
+  opacity: 0.3;
 }
 .footer.compare {
   padding-top: 0;
@@ -2013,10 +2020,7 @@ forms — ======================================================================
   visibility: hidden;
   opacity: 0;
 
-  -webkit-transition: opacity 200ms;
-          transition: opacity 200ms;
-
-  -webkit-box-align: center;
+   -webkit-box-align: center;
   -ms-flex-align: center;
   -ms-flex-line-pack: center;
 }
@@ -2025,6 +2029,9 @@ forms — ======================================================================
 .overlay.show {
   visibility: visible;
   opacity: 1;
+
+  -webkit-transition: opacity 500ms;
+          transition: opacity 500ms;
 }
 
 .popup-writeus {
