@@ -57,8 +57,7 @@ body {
   line-height: 30px;
   font-family: "Open Sans", Arial, sans-serif;
   color: #000000;
-  letter-spacing: 0.01em; /*TODO:FIXME: похоже эта штука сначала переводится в пиксели, а только потом наследуется.
-  Поэтому такое попадалово со шрифтами. исправить везде где шрифт отличается от дефолтнго. */
+  letter-spacing: 0.01em;
 
   background-color: #ffffff;
 }
@@ -100,7 +99,7 @@ iframe {
 
 
 .site-nav a:hover,
-.sub-menu a:hover,
+.sub-menu a[href]:hover,
 .catalog-link[href]:hover,
 .catalog-group li:hover {
   color: rgba(0, 0, 0, 0.6);
@@ -118,7 +117,7 @@ iframe {
 }
 
 .site-nav a:active,
-.sub-menu a:active,
+.sub-menu a[href]:active,
 .catalog-link[href]:active,
 .catalog-group li:active {
   color: rgba(0, 0, 0, 0.3);
@@ -153,10 +152,12 @@ textarea,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column nowrap;
       flex-flow: column nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   margin-top: 40px;
-  /*  padding-top:34px;*/
 
   color: inherit;
 
@@ -165,9 +166,6 @@ textarea,
 
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  -webkit-box-pack: start;
-  -ms-flex-flow: column nowrap;
-  -ms-flex-pack: start;
 }
 .header-row {
   display: -webkit-box;
@@ -232,9 +230,8 @@ textarea,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-      flex-wrap: wrap;
-
   -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .compare {
   display: block;
@@ -267,7 +264,6 @@ textarea,
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   -ms-flex-preferred-size: 100%;
-  /* padding-bottom: 50px;*/
 }
 .site-nav {
   display: -webkit-box;
@@ -275,16 +271,16 @@ textarea,
   display: flex;
   flex-grow: 1;
   flex-basis: 100%;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   padding-left: 0;
 
   -webkit-box-flex: 1;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   -ms-flex-positive: 1;
   -ms-flex-preferred-size: 100%;
-  -ms-flex-wrap: wrap;
 }
 
 .site-nav > li {
@@ -328,6 +324,8 @@ textarea,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
+  -ms-flex-flow: row nowrap;
       flex-flow: row wrap;
   align-content: flex-start;
   min-height: 144px;
@@ -340,9 +338,13 @@ textarea,
 
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
-  -ms-flex-flow: row wrap;
-  -ms-flex-flow: row nowrap;
   -ms-flex-line-pack: start;
+}
+.catalog-nav a:not([href]),
+.catalog-nav a:not([href]):hover,
+.catalog-nav a:not([href]):active{
+  cursor:default;
+  color:rgba(0, 0, 0, 0.6);
 }
 .catalog-group ul {
   width: 200px;
@@ -405,12 +407,12 @@ textarea,
   display: flex;
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
+  -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
   height: 49px;
 
   -webkit-box-flex: 0;
-  -webkit-box-ordinal-group: 0;
 }
 .search-field {
   width: 355px;
@@ -539,17 +541,17 @@ textarea,
 .slider-control:nth-child(1):checked ~ .slider-list li:nth-child(1),
 .slider-control:nth-child(2):checked ~ .slider-list li:nth-child(2),
 .slider-control:nth-child(3):checked ~ .slider-list li:nth-child(3) {
+  -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
 
   visibility: visible;
-
-  -webkit-box-ordinal-group: 0;
 }
 .slider-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row nowrap;
       flex-flow: row nowrap;
   margin: 0;
   padding: 0;
@@ -561,7 +563,6 @@ textarea,
 
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
-  -ms-flex-flow: row nowrap;
 }
 .slider-item {
   display: -webkit-box;
@@ -657,7 +658,9 @@ textarea,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-ordinal-group: 5;
   -ms-flex-order: 4;
   order: 4;
   align-self: flex-start;
@@ -667,9 +670,7 @@ textarea,
   list-style: none;
   border-spacing: 0;
 
-  -webkit-box-ordinal-group: 5;
   -ms-flex-item-align: start;
-  -ms-flex-wrap: wrap;
 }
 .slider-item-spec .attr-value {
   width: 140px;
@@ -705,13 +706,12 @@ catalog-sections ===============================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: 0;
   padding: 0;
 
   list-style: none;
-
-  -ms-flex-wrap: wrap;
 }
 .catalog-sections-list li {
   min-height: 240px;
@@ -829,6 +829,9 @@ services — ===================================================================
   cursor: default;
 
   pointer-events: none;
+}
+.service-button:not(:hover) {
+  transition: none;
 }
 .services-list {
   position: relative;
@@ -955,12 +958,11 @@ a:focus image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0;
 
   list-style: none;
-
-  -ms-flex-wrap: wrap;
 }
 .brands li {
   margin-right: 40px;
@@ -1262,8 +1264,6 @@ fieldset + fieldset {
   font-size: 18px;
   line-height: 24px;
   font-family: "Gilroy", Arial, sans-serif;
-  /* margin-bottom:0;
-  padding-bottom:0;*/
 }
 .form-filter legend::before {
   content: "";
@@ -1320,6 +1320,11 @@ double-slider =========================================================
   background-image: url("../img/filter-button.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+.slider-handle:active {
+margin-top:-10px;
+margin-left:-11px;
+transform: scale(1.1);
 }
 .value-from,
 .value-to {
@@ -1452,6 +1457,7 @@ catalog-list — ===============================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
       flex-flow: row wrap;
   margin: 0;
   padding: 0;
@@ -1460,7 +1466,6 @@ catalog-list — ===============================================================
 
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
-  -ms-flex-flow: row wrap;
 }
 .catalog-item {
   position: relative;
@@ -1494,11 +1499,11 @@ catalog-list — ===============================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column nowrap;
       flex-flow: column nowrap;
 
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  -ms-flex-flow: column nowrap;
 }
 .picture-controls {
   position: absolute;
@@ -1514,6 +1519,8 @@ header > .item-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 360px;
   min-height: 86px;
@@ -1521,9 +1528,6 @@ header > .item-link {
   padding-top: 32px;
 
   word-wrap: break-word;
-
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
 }
 .catalog-item-name {
   display: block;
@@ -1547,13 +1551,12 @@ header > .item-link {
 .catalog-item-image {
   position: relative;
 
+  -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
   width: 360px;
   height: 380px;
   overflow: hidden;
-
-  -webkit-box-ordinal-group: 0;
 }
 .catalog-item-image:hover .picture-controls {
   display: block;
@@ -1599,6 +1602,8 @@ pagination — =================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 760px;
   margin-top: 29px;
@@ -1606,16 +1611,16 @@ pagination — =================================================================
   margin-left: 40px;
 
   background-color: rgba(0,0,0,0.08);
-
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
 }
 .pagination-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-grow: 1;
+  -ms-flex-flow: row wrap;
       flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -1627,10 +1632,7 @@ pagination — =================================================================
   -webkit-box-direction: normal;
   -webkit-box-flex: 1;
   -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
   -ms-flex-align: center;
-  -ms-flex-flow: row wrap;
-  -ms-flex-pack: center;
   -ms-flex-positive: 1;
 }
 .pagination-list li {
@@ -1707,21 +1709,20 @@ footer — =====================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  justify-content: center;
 }
 .footer-row:first-child {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: -2px;
   margin-bottom: 14px;
 
   -webkit-box-align: start;
-  -webkit-box-pack: start;
   -ms-flex-align: start;
-  -ms-flex-pack: start;
 }
 
 .footer-row:last-child::before {
@@ -1796,13 +1797,13 @@ footer — =====================================================================
   display: -ms-flexbox;
   display: flex;
   flex-grow: 1;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 
   line-height: 30px;
 
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  -ms-flex-wrap: wrap;
 }
 .site-nav-footer li {
   display: block;
@@ -1888,7 +1889,6 @@ buttons — ====================================================================
 */
 
 .btn {
-  /*TODO: fix outline in chrome*/
   /* fixed gradient for services block, какой ужасный получился костыль, мама роди меня обратно*/
   display: block;
   min-width: 160px;
@@ -1990,6 +1990,8 @@ forms — ======================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -2002,10 +2004,8 @@ forms — ======================================================================
           transition: opacity 200ms;
 
   -webkit-box-align: center;
-  -webkit-box-pack: center;
   -ms-flex-align: center;
   -ms-flex-line-pack: center;
-  -ms-flex-pack: center;
 }
 
 .overlay:target,
@@ -2015,7 +2015,6 @@ forms — ======================================================================
 }
 
 .popup-writeus {
-  /*TODO: тень из PS конвертируется в css неточно; вставить картинкой?*/
   position: relative;
 
   min-width: 560px;
@@ -2031,13 +2030,12 @@ forms — ======================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 92px 100px 78px;
-
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  -ms-flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 92px 100px 78px;
 }
 
 .form-contact input[type="text"],
@@ -2061,10 +2059,6 @@ forms — ======================================================================
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  /* background-color: rgba(237, 181, 181, 0.5);*/
-  /*TODO: background-color:rgba(237, 181, 181, 0.5);
- проверить и повесить на поля при отправке формы или потере фокуса
- */
 }
 
 .form-contact .validate:invalid,
@@ -2116,7 +2110,6 @@ forms — ======================================================================
 }
 
 .popup-map {
-  /*TODO: тень из PS конвертируется в css неточно; вставить картинкой?*/
   position: relative;
 
   width: 960px;
