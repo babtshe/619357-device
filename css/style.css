@@ -223,8 +223,13 @@ textarea,
 .logout {
   display: inline-block;
   padding-left: 15px;
+  color:rgba(0, 0, 0, 0.3);
 
   vertical-align: top;
+}
+.logout:hover {
+  color:#000000;
+  opacity: 0.6;
 }
 .shop-controls {
   display: -webkit-box;
@@ -1769,7 +1774,15 @@ footer — =====================================================================
 }
 .footer .logout {
   margin-right: 22px;
-  margin-left: -22px;;
+  margin-left: -22px;
+  color:rgba(255, 255, 255, 0.3);
+}
+.footer .logout:hover {
+  color:#ffffff;
+  opacity:0.6;
+}
+.footer .logout:active {
+  opacity:0.3;
 }
 .footer.compare {
   padding-top: 0;
