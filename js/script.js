@@ -191,8 +191,10 @@ window.onload = function () { //ждем пока вся страница цел
   if (mapLink) { //map
     mapLink.addEventListener('click', function (event) {
       mapOverlay.classList.add('show');
-      mapOverlay.addEventListener('click', function () {
+      mapOverlay.addEventListener('click', function (event) {
+        if(event.target == mapOverlay){
         mapOverlay.classList.remove("show");
+        }
       });
       event.preventDefault();
       window.addEventListener("keydown", function (event) {
@@ -216,8 +218,10 @@ window.onload = function () { //ждем пока вся страница цел
   if (contactLink) { //contact
     contactLink.addEventListener('click', function (event) {
       formOverlay.classList.add('show');
-      formOverlay.addEventListener('click', function () {
-        formOverlay.classList.remove("show");
+      formOverlay.addEventListener('click', function (event) {
+        if(event.target == formOverlay) {
+          formOverlay.classList.remove("show");
+        }
       });
       event.preventDefault();
       window.addEventListener("keydown", function (event) {
