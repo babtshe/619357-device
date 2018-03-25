@@ -28,11 +28,11 @@
         </li>
       </ul>
       <ul class="shop-controls">
-        <li>
-          <a class="compare" href="#">Сравнить</a>
+        <li class="compare">
+          <a href="#">Сравнить</a>
         </li>
-        <li>
-          <a class="basket" href="#">Корзина</a>
+        <li class="basket">
+          <a href="#">Корзина</a>
         </li>
       </ul>
     </div>
@@ -192,11 +192,11 @@
     <section class="services">
       <div class="services-container set-width">
         <h2 class="visually-hidden">Услуги</h2>
-        <div class="services-buttons">
-          <a class="btn service-button delivery current" href="#delivery">Доставка</a>
-          <a class="btn service-button warranty" href="#warranty">Гарантия</a>
-          <a class="btn service-button credit" href="#credit">Кредит</a>
-        </div>
+        <ul class="services-buttons">
+          <li><a class="btn service-button delivery current" href="#delivery">Доставка</a></li>
+          <li><a class="btn service-button warranty" href="#warranty">Гарантия</a></li>
+          <li><a class="btn service-button credit" href="#credit">Кредит</a></li>
+        </ul>
         <ul class="services-list">
           <li class="service-item delivery current" id="delivery">
             <h2>Доставка</h2>
@@ -204,7 +204,7 @@
           </li>
           <li class="service-item warranty" id="warranty">
             <h2>Гарантия</h2>
-            <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
+            <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый.<br> Товар, не дом, конечно же.</p>
           </li>
           <li class="service-item credit" id="credit">
             <h2>Кредит</h2>
@@ -322,18 +322,24 @@
         <img src="img/device-logo-footer.svg" alt="Логотип DEVICE" width="163" height="48">
       </a>
       <ul class="user-nav footer">
-        <li class="login">
+        <li class="login footer">
           <a href="#">Войти</a>
         </li>
-        <li class="profile hidden">
+        <li class="profile footer hidden">
           <a href="#">Валентин Петухов</a>
         </li>
-        <li class="logout hidden">
+        <li class="logout footer hidden">
           <a href="#">Выйти</a>
         </li>
       </ul>
-      <a class="compare footer" href="#">Сравнить</a>
-      <a class="basket footer" href="#">Корзина</a>
+      <ul class="shop-controls footer">
+        <li class="compare footer">
+          <a href="#">Сравнить</a>
+        </li>
+        <li class="basket footer">
+          <a href="#">Корзина</a>
+        </li>
+      </ul>
     </div>
     <div class="footer-row set-width">
       <address class="footer-address">

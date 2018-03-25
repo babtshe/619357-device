@@ -87,10 +87,7 @@ iframe {
 }
 
 .header-logo[href]:hover,
-.compare:hover,
 .site-nav-footer li:hover,
-.user-nav li:hover,
-.basket:hover,
 .footer-logo[href]:hover,
 .credits:hover,
 .phone:hover {
@@ -106,10 +103,7 @@ iframe {
 }
 
 .header-logo[href]:active,
-.compare:active,
-.user-nav li:active,
 .site-nav-footer li:active,
-.basket:active,
 .footer-logo[href]:active,
 .credits:active,
 .phone:active {
@@ -141,7 +135,62 @@ textarea,
   line-height: 24px;
   font-family: "Gilroy", Arial, sans-serif;
 }
+/*
+buttons — ========================================================================================================================
+*/
 
+.btn {
+  /* fixed gradient for services block, какой ужасный получился костыль, мама роди меня обратно*/
+  display: block;
+  min-width: 160px;
+  max-width: 280px;
+  height: 40px;
+  padding: 8px 20px;
+  overflow: hidden;
+
+  font-family: "Gilroy", Arial, sans-serif;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  text-overflow: clip;
+
+  background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0))),
+  -webkit-gradient(linear, left top, left bottom, from(rgba(240, 197, 46, 0)), color-stop(40%, rgba(240, 197, 46, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(240, 197, 46, 0)));
+  background-image: linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%),
+  linear-gradient(to bottom, rgba(240, 197, 46, 0) 0%, rgba(240, 197, 46, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(240, 197, 46, 0) 60%);
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  border: none;
+  cursor: pointer;
+
+  -webkit-transition: all 200ms;
+          transition: all 200ms;
+}
+
+.btn:hover,
+.btn:active {
+  background-position: 0 -7px, 0 -14px,0 0, 0 7px, 0 14px, 0 -21px, 0 21px;
+}
+
+.btn:active {
+  color: rgba(0, 0, 0, 0.3);
+
+  outline: none;
+}
 /*
 * — header — ==============================================================================================================
 */
@@ -201,36 +250,50 @@ textarea,
 }
 
 .user-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
 }
-.login,
-.profile {
-  display: inline-block;
+.user-nav a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.user-nav a:hover::before {
+  opacity: 0.6;
+}
+.user-nav a:active {
+  opacity: 0.3;
+}
+.login a,
+.profile a {
+  position: relative;
+
   max-width: 200px;
   padding-left: 46px;
-  overflow: hidden;
+}
+.login a::before,
+.profile a::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 21px;
 
-  vertical-align: top;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 13px;
+  height: 12px;
 
   background-image: url("../img/user.svg");
   background-repeat: no-repeat;
-  background-position: left 20px center;
+  background-position: 0 0;
 }
 .logout {
-  display: inline-block;
-  padding-left: 15px;
+  padding-left: 20px;
 
-  vertical-align: top;
   color: rgba(0, 0, 0, 0.3);
 }
-.logout:hover {
-  color: #000000;
-
-  opacity: 0.6;
+.logout a:hover {
+  color: rgba(0, 0, 0, 0.6);
 }
 .shop-controls {
   display: -webkit-box;
@@ -239,24 +302,56 @@ textarea,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.compare {
+.shop-controls a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.shop-controls a:active {
+  opacity: 0.3;
+}
+.shop-controls a:hover::before {
+  opacity: 0.8;
+}
+
+.compare a {
+  position: relative;
+
   display: block;
   padding-top: 9px;
   padding-right: 20px;
   padding-left: 40px;
+}
+.compare a::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 10px;
+  height: 10px;
 
   background-image: url("../img/compare.svg");
   background-repeat: no-repeat;
-  background-position: left 20px top 20px;
+  background-position: 0 0;
 }
-.basket {
+.basket a {
+  position: relative;
+
   display: block;
   padding-top: 9px;
   padding-left: 43px;
+}
+.basket a::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 21px;
+
+  width: 12px;
+  height: 12px;
 
   background-image: url("../img/cart.svg");
   background-repeat: no-repeat;
-  background-position: left 20px top 18px;
+  background-position: 0 0;
 }
 
 .main-nav {
@@ -587,7 +682,9 @@ textarea,
 
   counter-increment: slide-number;
 }
-
+.slider-item .btn {
+  width: 220px;
+}
 .slide-image {
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
@@ -642,6 +739,7 @@ textarea,
   color: #ffffff;
   letter-spacing: 0.01em;
 }
+
 .slider-slogan {
   z-index: 1;
 
@@ -820,19 +918,33 @@ services — ===================================================================
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 70px;
+  padding-bottom: 23px;
 }
 .services-buttons {
+  width: 284px;
+  margin: 0;
+  padding-top: 80px;
+  padding-bottom: 47px;
+  padding-left: 0;
+
+  list-style: none;
+
+  border-right: 7px solid #000000;
+}
+.service-button {
   width: 160px;
-  margin-top: 80px;
 }
-.services-buttons .btn {
-  margin-bottom: 24px;
-}
-.services-buttons .current {
+
+.service-button:active,
+.service-button.current {
+  width: 280px;
+  padding-right: 140px;
+
   color: #f7e184;
 
   background: #000000;
+}
+.service-button.current {
   cursor: default;
 
   pointer-events: none;
@@ -840,6 +952,10 @@ services — ===================================================================
 .service-button:not(:hover) {
   -webkit-transition: none;
           transition: none;
+}
+
+.service-button {
+  margin-bottom: 24px;
 }
 .services-list {
   position: relative;
@@ -849,43 +965,22 @@ services — ===================================================================
 
   list-style: none;
 }
-.services-list::before {
-  content: "";
-  position: absolute;
-  left: 117px;
 
-  display: block;
-  width: 7px;
-  height: 319px;
-
-  background-color: #000000;
-}
 .services-list li {
   position: absolute;
   z-index: -1;
 
   margin-top: 73px;
-  margin-left: 240px;
+  margin-left: 116px;
   padding-right: 240px;
 
   visibility: hidden;
 }
 .services-list .current {
+  position: relative;
   z-index: 0;
 
   visibility: visible;
-}
-.services-list li::before {
-  content: "";
-  position: absolute;
-  top: 7px;
-  left: -240px;
-
-  display: block;
-  width: 120px;
-  height: 40px;
-
-  background-color: #000000;
 }
 
 .services h2 {
@@ -929,17 +1024,13 @@ services — ===================================================================
 
   background-image: url("../img/warranty.svg");
 }
-.services-list .credit::before {
-  top: 135px;
-}
+
+
 .services-list .credit::after {
   top: -12px;
   right: -34px;
 
   background-image: url("../img/credit.svg");
-}
-.services-list .warranty::before {
-  top: 71px;
 }
 
 /*
@@ -1481,6 +1572,8 @@ catalog-list — ===============================================================
   position: relative;
 
   margin: 40px 0 0 40px;
+
+  cursor: default;
 }
 .catalog-item.new::before {
   content: "new";
@@ -1569,22 +1662,36 @@ header > .item-link {
   overflow: hidden;
 }
 .catalog-item-image:hover .picture-controls {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -ms-flex-align: center;
 }
-
+.picture-controls :nth-child(1n) {
+  margin-top: 11px;
+  margin-bottom: 2px;
+}
+.picture-controls :first-child {
+  margin-top: 37px;
+}
 .btn.basket-add {
-  position: absolute;
-  top: 170px;
-  left: 80px;
-
   display: block;
+  flex-shrink: 0;
   width: 200px;
+
+  -ms-flex-negative: 0;
 }
 .compare-add {
-  position: absolute;
-  top: 222px;
-  left: 102px;
-
   display: block;
 
   font-weight: 300;
@@ -1741,7 +1848,7 @@ footer — =====================================================================
   display: block;
   width: 80px;
   height: 7px;
-  margin: auto 419px auto 0;
+  margin: auto 0;
 
   background-color: #ffc600;
 }
@@ -1759,53 +1866,69 @@ footer — =====================================================================
   color: inherit;
 }
 .footer-logo {
-  flex-grow: 1;
-
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
+  margin-right: auto;
 }
 .footer-logo img {
   margin-top: -3px;
   margin-left: -1px;
 }
-.footer .profile {
+.footer.user-nav a,
+.footer.shop-controls a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer.user-nav a:hover,
+.footer.shop-controls a:hover {
+  color: #ffffff;
+}
+.footer.user-nav a:hover::before,
+.footer.shop-controls a:hover::before {
+  opacity: 0.6;
+}
+
+.footer.profile {
   max-width: 220px;
 }
-.footer .login,
-.footer .profile {
+.footer.login,
+.footer.profile {
   padding-right: 23px;
-
+}
+.footer.login a::before,
+.footer.profile a::before {
   background-image: url("../img/user-footer.svg");
 }
-.footer .logout {
+.footer.logout {
   margin-right: 22px;
   margin-left: -22px;
 
   color: rgba(255, 255, 255, 0.3);
 }
-.footer .logout:hover {
+.footer.logout a:hover {
   color: #ffffff;
 
-  opacity: 0.6;
+  opacity: 1;
 }
-.footer .logout:active {
+.footer.logout a:active {
   opacity: 0.3;
 }
-.footer.compare {
+.footer.compare a {
   padding-top: 0;
+}
+.footer.compare a::before {
+  top: 11px;
 
   background-image: url("../img/compare-footer.svg");
-  background-position: 21px 11px;
 }
-.footer.basket {
+.footer.basket a {
   padding-top: 0;
+}
+.footer.basket a::before {
+  top: 9px;
 
   background-image: url("../img/cart-footer.svg");
-  background-position: 21px 9px;
 }
 .footer-address {
   flex-shrink: 0;
-  width: 360px;
+  max-width: 360px;
 
   font-style: normal;
   letter-spacing: normal;
@@ -1819,6 +1942,9 @@ footer — =====================================================================
   flex-grow: 1;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 
   line-height: 30px;
 
@@ -1833,10 +1959,11 @@ footer — =====================================================================
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
-.site-nav-footer li:nth-child(3n+1) {
-  margin-left: -12px;
+.site-nav-footer li:nth-child(5n+1) {
+  margin-left: -20px;
+  padding-left: 0;
 }
-.site-nav-footer li:nth-child(3n+2) {
+.site-nav-footer li:nth-child(5n+2) {
   padding-right: 16px;
   padding-left: 17px;
 }
@@ -1859,10 +1986,16 @@ footer — =====================================================================
   display: flex;
   -ms-flex: 1;
       flex: 1;
-  margin: 0 auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
   padding: 0;
 
   -webkit-box-flex: 1;
+}
+.social-list li:first-child {
+  margin-left: -47px;
 }
 
 .social-list a {
@@ -1903,75 +2036,6 @@ footer — =====================================================================
   background-image: url("../img/logo-html.svg");
   background-repeat: no-repeat;
   background-position: right 0 top -1px;
-}
-/*
-buttons — ========================================================================================================================
-*/
-
-.btn {
-  /* fixed gradient for services block, какой ужасный получился костыль, мама роди меня обратно*/
-  display: block;
-  min-width: 160px;
-  max-width: 280px;
-  height: 40px;
-  padding: 8px 20px;
-  overflow: hidden;
-
-  font-family: "Gilroy", Arial, sans-serif;
-  text-align: center;
-  color: #000000;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.2em;
-  white-space: nowrap;
-  text-overflow: clip;
-
-  background-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0))),
-  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(40%, #f0c52e), color-stop(60%, #f0c52e), color-stop(60%, rgba(0, 0, 0, 0)));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%),
-  linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, #f0c52e 40%, #f0c52e 60%, rgba(0, 0, 0, 0) 60%);
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  border: none;
-  cursor: pointer;
-
-  -webkit-transition: all 200ms;
-          transition: all 200ms;
-}
-
-.btn:hover,
-.btn:active {
-  background-position: 0 -7px, 0 -14px,0 0, 0 7px, 0 14px, 0 -21px, 0 21px;
-}
-
-.btn:active {
-  color: rgba(0, 0, 0, 0.3);
-
-  outline: none;
-}
-
-.slider-item .btn {
-  width: 220px;
-}
-
-.services .btn {
-  width: 160px;
-}
-.services .btn:active {
-  color: #f7e184;
-
-  background: #000000;
 }
 
 /*
@@ -2020,7 +2084,7 @@ forms — ======================================================================
   visibility: hidden;
   opacity: 0;
 
-   -webkit-box-align: center;
+  -webkit-box-align: center;
   -ms-flex-align: center;
   -ms-flex-line-pack: center;
 }
