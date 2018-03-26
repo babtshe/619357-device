@@ -968,7 +968,7 @@ services — ===================================================================
 
 .services-list li {
   position: absolute;
-  top:0;
+  top: 0;
   z-index: -1;
 
   margin-top: 73px;
@@ -2050,6 +2050,8 @@ footer — =====================================================================
   height: 1px;
   margin: -1px;
 
+  font-size: 0;
+
   clip: rect(0 0 0 0);
 }
 
@@ -2102,8 +2104,7 @@ forms — ======================================================================
 .popup-writeus {
   position: relative;
 
-  min-width: 560px;
-  max-width: 960px;
+  width: 960px;
   min-height: 553px;
 
   background: #ffffff;
@@ -2146,19 +2147,21 @@ forms — ======================================================================
           box-shadow: none;
 }
 
-.form-contact .validate:invalid,
-.form-contact .validate:invalid:hover,
-.form-contact .validate:invalid:active {
-  background-color: rgba(237, 181, 181, 0.5);
-}
 
-.form-contact input[type="text"]:focus,
-.form-contact input[type="email"]:focus,
+.form-contact input:not([type="submit"]):focus,
 .form-contact textarea:focus {
   background-color: #ffffff;
   outline: 3px solid #f0c52e;
 }
+.form-contact .validate:invalid,
+.form-contact .validate:invalid:hover,
+.form-contact .validate:invalid:active,
+.form-contact .validate:invalid:focus {
+  background-color: rgba(237, 181, 181, 0.5);
 
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
+}
 
 
 .form-contact input[type="text"],
@@ -2234,4 +2237,108 @@ forms — ======================================================================
 
 .modal-close-btn:active {
   opacity: 0.3;
+}
+/*уровень вложенности проходит по критериям*/
+.form-contact .validate.error-animation:invalid,
+.form-contact .validate.error-animation:invalid:hover,
+.form-contact .validate.error-animation:invalid:active,
+.form-contact .validate.error-animation:invalid:focus {
+  -webkit-animation: shake-toggle 0.6s;
+          animation: shake-toggle 0.6s;
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+@-webkit-keyframes shake-toggle {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+@keyframes shake-toggle {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
 }

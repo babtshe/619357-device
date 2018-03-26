@@ -67,7 +67,7 @@ window.onload = function () { //ждем пока вся страница цел
     var handleTo = document.querySelector('.slider-handle.price-to');
     var sliderRange = document.querySelector('.slider-range');
   } catch (e) {
-    console.log('селектор цены не нашли на страничке');
+    //console.log('селектор цены не нашли на страничке');
   }
   if (handleFrom && handleTo) { //отслеживаем клики по ручкам
     handleFrom.addEventListener('mousedown', mouseDown, false);
@@ -80,7 +80,6 @@ window.onload = function () { //ждем пока вся страница цел
     }, false);
     initialiseRange();
   }
-
 
   function initialiseRange() { //подставим значения ползунков и фона по умолчанию как в макете
     if (document.querySelector('.double-range')) { //проверим есть ли блок на странице
@@ -95,7 +94,7 @@ window.onload = function () { //ждем пока вся страница цел
     }
   }
 
-  function updateValues(handle) {
+  function updateValues(handle) {//меняем значение подписей при изменении положения ручек
     if (handle == handleFrom) {
       var val = (Math.round(parseInt(handleFrom.style.left) * valueTo / 100));
       document.querySelector('.double-range .value-from').innerHTML = 'от ' + val;
@@ -164,26 +163,32 @@ window.onload = function () { //ждем пока вся страница цел
   // forms validate========================================================
   var formFields = document.querySelectorAll('.form-contact input[type="text"], .form-contact textarea, .form-contact input[type="email"]');
   var formSubmit = document.querySelector('.form-contact input[type="submit"]');
+  var form = document.querySelector('.form-contact');
 
-  if (formSubmit) {
-    formSubmit.addEventListener('click', validateAll, false);
+  if (form) {
+    form.addEventListener('submit', validateAll, false);
   }
   initialiseForm();
 
   function initialiseForm() {
+
     for (var i = 0; i < formFields.length; i++) {
       formFields[i].addEventListener('blur', validate, false);
-      formFields[i].classList.remove("validate");
+      formFields[i].classList.remove('validate');
     }
   }
 
   function validate(event) {
-    event.currentTarget.className += " validate";
+    event.currentTarget.classList.add('validate');
   }
 
   function validateAll(event) {
     for (var i = 0; i < formFields.length; i++) {
-      formFields[i].className += " validate";
+      formFields[i].classList.add('validate');
+      if (!formFields[i].validity.valid){
+        event.preventDefault();//не отправляем форму если поле неправильное
+        formFields[i].classList.toggle('error-animation');//хитрый способ повторной анимации, если клацать по кнопке постоянно.
+      }
     }
   }
   //forms show==============================================================================
@@ -194,14 +199,14 @@ window.onload = function () { //ждем пока вся страница цел
       mapOverlay.classList.add('show');
       mapOverlay.addEventListener('click', function (event) {
         if(event.target == mapOverlay){
-        mapOverlay.classList.remove("show");
+        mapOverlay.classList.remove('show');
         }
       });
       event.preventDefault();
       window.addEventListener("keydown", function (event) {
         if (event.keyCode === 27) {
-          if (mapOverlay.classList.contains("show")) {
-            mapOverlay.classList.remove("show");
+          if (mapOverlay.classList.contains('show')) {
+            mapOverlay.classList.remove('show');
           }
         }
       });
@@ -217,26 +222,38 @@ window.onload = function () { //ждем пока вся страница цел
   var contactLink = document.querySelector('.form-contact-link');
   var formOverlay = document.getElementById('popup-writeus');
   if (contactLink) { //contact
+
+    var formShutdown = function(event) {
+      if (formOverlay.classList.contains('show')) {
+        formOverlay.classList.remove('show');}
+      var activeValidate= formOverlay.querySelectorAll('.validate');
+        for (var i = 0; i< activeValidate.length; i++){
+          activeValidate[i].classList.remove('validate');
+        }
+
+      form.reset();
+      event.preventDefault();
+    };
+
     contactLink.addEventListener('click', function (event) {
       formOverlay.classList.add('show');
       formOverlay.addEventListener('click', function (event) {
         if(event.target == formOverlay) {
-          formOverlay.classList.remove("show");
+          formShutdown(event);
         }
       });
       event.preventDefault();
+      var firstField = document.querySelector('.form-contact input');
+      firstField.focus();
       window.addEventListener("keydown", function (event) {
         if (event.keyCode === 27) {
-          if (formOverlay.classList.contains("show")) {
-            formOverlay.classList.remove("show");
-          }
+          formShutdown(event);
         }
       });
       var formClose = formOverlay.querySelector('.modal-close-btn');
       if (formClose) {
         formClose.addEventListener('click', function (event) {
-          formOverlay.classList.remove('show');
-          event.preventDefault();
+          formShutdown(event);
         });
       }
     }, false);
