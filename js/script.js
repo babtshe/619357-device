@@ -118,6 +118,7 @@ window.onload = function () { //ждем пока вся страница цел
   function mouseDown(event) { //реагирует только на левую кнопку.
     if (event.button === 0) {
       isDown = true;
+      event.preventDefault();
       handle = event.currentTarget;
       offset = event.currentTarget.offsetLeft - event.clientX + 10;
       document.addEventListener('mouseup', function () {
