@@ -1,6 +1,7 @@
 /*
 load fonts
 */
+
 @font-face {
   font-weight: 300;
   font-family: "Gilroy";
@@ -41,6 +42,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
@@ -65,10 +67,12 @@ body {
 a {
   text-decoration: none;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 .nobr {
   white-space: nowrap;
 }
@@ -78,6 +82,7 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
+
 .outlined:focus,
 .outlined:active {
   outline: 1px dotted rgba(0, 0, 0, 0.5);
@@ -93,7 +98,6 @@ iframe {
 .phone:hover {
   opacity: 0.6;
 }
-
 
 .site-nav a:hover,
 .sub-menu a[href]:hover,
@@ -117,8 +121,9 @@ iframe {
   color: rgba(0, 0, 0, 0.3);
 }
 
-input,
-textarea,
+.form-search input,
+.form-contact input,
+.form-contact textarea,
 .sort-type-list {
   font-size: 14px;
   line-height: 18px;
@@ -135,6 +140,7 @@ textarea,
   line-height: 24px;
   font-family: "Gilroy", Arial, sans-serif;
 }
+
 /*
 buttons — ========================================================================================================================
 */
@@ -191,10 +197,12 @@ buttons — ====================================================================
 
   outline: none;
 }
+
 /*
 * — header — ==============================================================================================================
 */
 /*FIXME: placeholder text letter-spacing*/
+
 .header-main {
   position: relative;
 
@@ -216,6 +224,7 @@ buttons — ====================================================================
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
 }
+
 .header-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,17 +232,21 @@ buttons — ====================================================================
   margin-bottom: 30px;
   padding: 0 60px 0 59px;
 }
+
 .header-row:first-child {
   margin-top: 34px;
 }
+
 .header-row:last-child {
   margin-bottom: 50px;
 }
+
 .header-logo {
   position: absolute;
   top: -24px;
   left: 78px;
 }
+
 .header-logo,
 .footer-logo {
   -webkit-transition: all 200ms;
@@ -243,6 +256,7 @@ buttons — ====================================================================
 .header-main a {
   color: inherit;
 }
+
 .header-main ul {
   margin: 0;
 
@@ -257,15 +271,19 @@ buttons — ====================================================================
   margin-bottom: 0;
   padding: 0;
 }
+
 .user-nav a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
+
 .user-nav a:hover::before {
   opacity: 0.6;
 }
+
 .user-nav a:active {
   opacity: 0.3;
 }
+
 .login a,
 .profile a {
   position: relative;
@@ -273,6 +291,7 @@ buttons — ====================================================================
   max-width: 200px;
   padding-left: 46px;
 }
+
 .login a::before,
 .profile a::before {
   content: "";
@@ -287,14 +306,17 @@ buttons — ====================================================================
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .logout {
   padding-left: 20px;
 
   color: rgba(0, 0, 0, 0.3);
 }
+
 .logout a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
+
 .shop-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,12 +324,15 @@ buttons — ====================================================================
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
 .shop-controls a:hover {
   color: rgba(0, 0, 0, 0.6);
 }
+
 .shop-controls a:active {
   opacity: 0.3;
 }
+
 .shop-controls a:hover::before {
   opacity: 0.8;
 }
@@ -320,6 +345,7 @@ buttons — ====================================================================
   padding-right: 20px;
   padding-left: 40px;
 }
+
 .compare a::before {
   content: "";
   position: absolute;
@@ -333,6 +359,7 @@ buttons — ====================================================================
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .basket a {
   position: relative;
 
@@ -340,6 +367,7 @@ buttons — ====================================================================
   padding-top: 9px;
   padding-left: 43px;
 }
+
 .basket a::before {
   content: "";
   position: absolute;
@@ -366,6 +394,7 @@ buttons — ====================================================================
   -ms-flex-positive: 1;
   -ms-flex-preferred-size: 100%;
 }
+
 .site-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -391,6 +420,7 @@ buttons — ====================================================================
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+
 .site-nav > li:first-child {
   position: relative;
 
@@ -400,6 +430,7 @@ buttons — ====================================================================
 
   -webkit-box-flex: 0;
 }
+
 .site-nav > li:nth-child(3) {
   flex-grow: 1;
   margin-left: -2px;
@@ -407,6 +438,7 @@ buttons — ====================================================================
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
 }
+
 .site-nav > li:nth-child(4n+4) {
   padding-right: 0;
 }
@@ -441,6 +473,7 @@ buttons — ====================================================================
   -webkit-box-orient: horizontal;
   -ms-flex-line-pack: start;
 }
+
 .catalog-nav a:not([href]),
 .catalog-nav a:not([href]):hover,
 .catalog-nav a:not([href]):active {
@@ -448,11 +481,13 @@ buttons — ====================================================================
 
   cursor: default;
 }
+
 .catalog-group ul {
   width: 200px;
   padding-top: 3px;
   padding-left: 40px;
 }
+
 .catalog-group li {
   font-weight: 300;
   font-size: 15px;
@@ -461,6 +496,7 @@ buttons — ====================================================================
   text-transform: none;
   letter-spacing: 0.01em;
 }
+
 .catalog-group:nth-child(5n+1) ul {
   width: 260px;
   padding-left: 60px;
@@ -471,14 +507,17 @@ buttons — ====================================================================
 
   padding-right: 30px;
 }
+
 .catalog-link:not([href]) {
   color: rgba(0, 0, 0, 0.6);
 
   cursor: default;
 }
+
 .catalog-link:not([href]):active {
   color: rgba(0, 0, 0, 0.6);
 }
+
 .catalog-link::after {
   content: "";
   position: absolute;
@@ -496,13 +535,14 @@ buttons — ====================================================================
 .sub-menu:hover > ul {
   visibility: visible;
 }
+
 .header-main .user-nav {
   margin-right: auto;
   padding-top: 9px;
 }
 
-
 /* form-search */
+
 .form-search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -516,6 +556,7 @@ buttons — ====================================================================
 
   -webkit-box-flex: 0;
 }
+
 .search-field {
   width: 355px;
   padding: 8px 20px 8px 39px;
@@ -588,6 +629,7 @@ buttons — ====================================================================
   background-color: #000000;
   visibility: visible;
 }
+
 /*
 * — slider — =====================================================================================================
 */
@@ -597,6 +639,7 @@ buttons — ====================================================================
 
   margin-bottom: 22px;
 }
+
 .slider::before {
   content: "";
 
@@ -607,6 +650,7 @@ buttons — ====================================================================
   background-color: rgba(247,226,150,1);
   background-clip: content-box;
 }
+
 .slider-labels {
   position: absolute;
   right: 103px;
@@ -617,9 +661,11 @@ buttons — ====================================================================
   display: -ms-flexbox;
   display: flex;
 }
+
 .slider-control {
   display: none;
 }
+
 .slider-selector {
   display: block;
   width: 12px;
@@ -633,12 +679,14 @@ buttons — ====================================================================
   background-position: center;
   background-size: contain;
 }
+
 /*CSS slider multi-level selector 1*/
 .slider-control:nth-child(1):checked ~ .slider-labels label:nth-child(1),
 .slider-control:nth-child(2):checked ~ .slider-labels label:nth-child(2),
 .slider-control:nth-child(3):checked ~ .slider-labels label:nth-child(3) {
   background-image: url("../img/slider-button.svg");
 }
+
 /*CSS slider multi-level selector 2*/
 .slider-control:nth-child(1):checked ~ .slider-list li:nth-child(1),
 .slider-control:nth-child(2):checked ~ .slider-list li:nth-child(2),
@@ -649,6 +697,7 @@ buttons — ====================================================================
 
   visibility: visible;
 }
+
 .slider-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -666,6 +715,7 @@ buttons — ====================================================================
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
 }
+
 .slider-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -677,14 +727,17 @@ buttons — ====================================================================
 
   -webkit-box-flex: 0;
 }
+
 .slider-item::before {
   content: "";
 
   counter-increment: slide-number;
 }
+
 .slider-item .btn {
   width: 220px;
 }
+
 .slide-image {
   -ms-flex: 0 0 50%;
       flex: 0 0 50%;
@@ -692,12 +745,14 @@ buttons — ====================================================================
 
   -webkit-box-flex: 0;
 }
+
 .slide-image img {
   display: block;
   max-width: 560px;
   max-height: 500px;
   margin: 0 auto;
 }
+
 .slide-content {
   position: relative;
 
@@ -714,6 +769,7 @@ buttons — ====================================================================
   -webkit-box-flex: 0;
   -webkit-box-orient: vertical;
 }
+
 .slide-content::before {
   content: "";
 
@@ -724,6 +780,7 @@ buttons — ====================================================================
 
   background-color: #ffffff;
 }
+
 .slide-content::after {
   content: "0"counter(slide-number);
   position: absolute;
@@ -751,14 +808,17 @@ buttons — ====================================================================
   font-family: "Gilroy", Arial, sans-serif;
   letter-spacing: 0.01em;
 }
+
 .slider-description {
   width: 485px;
   margin-top: 0;
   margin-bottom: 42px;
 }
+
 .slide-content .btn {
   margin-bottom: 50px;
 }
+
 .slider-item-spec {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -777,6 +837,7 @@ buttons — ====================================================================
 
   -ms-flex-item-align: start;
 }
+
 .slider-item-spec .attr-value {
   width: 140px;
   padding: 0;
@@ -787,9 +848,11 @@ buttons — ====================================================================
   font-family: "Gilroy", Arial, sans-serif;
   word-wrap: break-word;
 }
+
 .slider-item-spec .attr-value:first-child {
   width: 160px;
 }
+
 .slider-item-spec .attr-name {
   padding: 6px 0 0 0;
 
@@ -807,6 +870,7 @@ catalog-sections ===============================================================
   margin-bottom: 81px;
   padding-top: 50px;
 }
+
 .catalog-sections-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -818,14 +882,17 @@ catalog-sections ===============================================================
 
   list-style: none;
 }
+
 .catalog-sections-list li {
   min-height: 240px;
   margin-top: 20px;
   margin-right: 40px;
 }
+
 .catalog-sections-list li:nth-child(6n) {
   margin-right: 0;
 }
+
 .section-item {
   position: relative;
 
@@ -836,6 +903,7 @@ catalog-sections ===============================================================
   color: inherit;
   word-wrap: break-word;
 }
+
 .section-item::before {
   content: "";
 
@@ -846,6 +914,7 @@ catalog-sections ===============================================================
 
   background-color: rgba(240,197,46,0.5);
 }
+
 .section-item::after {
   content: "";
   position: absolute;
@@ -858,35 +927,44 @@ catalog-sections ===============================================================
 
   background-repeat: no-repeat;
 }
+
 .section-item:hover::before {
   background-color: rgba(240,197,46,1);
 }
+
 .section-item:active::after {
   opacity: 0.3;
 }
+
 .section-item:active {
   color: rgba(0,0,0,0.3);
 }
+
 .section-item.item-vr::after {
   background-image: url("../img/popular-1.svg");
   background-position: 31px 52px;
 }
+
 .section-item.item-monopod::after {
   background-image: url("../img/popular-2.svg");
   background-position: 38px 41px;
 }
+
 .section-item.item-camera::after {
   background-image: url("../img/popular-3.svg");
   background-position: 49px 38px;
 }
+
 .section-item.item-bracelet::after {
   background-image: url("../img/popular-4.svg");
   background-position: 28px 50px;
 }
+
 .section-item.item-watch::after {
   background-image: url("../img/popular-5.svg");
   background-position: 55px 32px;
 }
+
 .section-item.item-quadro::after {
   background-image: url("../img/popular-6.svg");
   background-position: 13px 49px;
@@ -895,6 +973,7 @@ catalog-sections ===============================================================
 /*
 services — ================================================================================================
 */
+
 .services {
   min-width: 1200px;
   margin-bottom: 49px;
@@ -902,6 +981,7 @@ services — ===================================================================
 
   background-color: #e5e5e5;
 }
+
 .services::before {
   content: "";
   z-index: -1;
@@ -920,6 +1000,7 @@ services — ===================================================================
   display: flex;
   padding-bottom: 23px;
 }
+
 .services-buttons {
   width: 284px;
   margin: 0;
@@ -931,6 +1012,7 @@ services — ===================================================================
 
   border-right: 7px solid #000000;
 }
+
 .service-button {
   width: 160px;
 }
@@ -944,11 +1026,13 @@ services — ===================================================================
 
   background: #000000;
 }
+
 .service-button.current {
   cursor: default;
 
   pointer-events: none;
 }
+
 .service-button:not(:hover) {
   -webkit-transition: none;
           transition: none;
@@ -957,6 +1041,7 @@ services — ===================================================================
 .service-button {
   margin-bottom: 24px;
 }
+
 .services-list {
   position: relative;
 
@@ -977,6 +1062,7 @@ services — ===================================================================
 
   visibility: hidden;
 }
+
 .services-list .current {
   position: relative;
   z-index: 0;
@@ -1000,6 +1086,7 @@ services — ===================================================================
 
   letter-spacing: 0.02em;
 }
+
 .service-item::after {
   content: "";
   position: absolute;
@@ -1013,19 +1100,20 @@ services — ===================================================================
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .services-list .delivery::after {
   top: 12px;
   right: -58px;
 
   background-image: url("../img/delivery.svg");
 }
+
 .services-list .warranty::after {
   top: -12px;
   right: -43px;
 
   background-image: url("../img/warranty.svg");
 }
-
 
 .services-list .credit::after {
   top: -12px;
@@ -1037,9 +1125,11 @@ services — ===================================================================
 /*
 brands — =========================================================================================================
 */
+
 .brands {
   margin-bottom: 84px;
 }
+
 .brand-grayscale image {
   opacity: 0.2;
 
@@ -1064,9 +1154,11 @@ a:focus image {
 
   list-style: none;
 }
+
 .brands li {
   margin-right: 40px;
 }
+
 .brands li:nth-child(4n) {
   margin-right: 0;
 }
@@ -1081,6 +1173,7 @@ about & contacts — ===========================================================
   display: flex;
   margin-bottom: 82px;
 }
+
 .about::before,
 .contact::before {
   content: "";
@@ -1092,6 +1185,7 @@ about & contacts — ===========================================================
 
   background-color: #000000;
 }
+
 .about h2,
 .contact h2 {
   margin-top: 0;
@@ -1104,12 +1198,14 @@ about & contacts — ===========================================================
   font-family: "Gilroy", Arial, sans-serif;
   letter-spacing: 0.01em;
 }
+
 .about p,
 .contact p {
   margin: 30px 0 30px 0;
 
   letter-spacing: normal;
 }
+
 .about {
   -ms-flex: 0 1 auto;
       flex: 0 1 auto;
@@ -1118,12 +1214,14 @@ about & contacts — ===========================================================
 
   -webkit-box-flex: 0;
 }
+
 .about ul {
   margin: 66px 0 54px 2px;
   padding: 0;
 
   list-style: none;
 }
+
 .about li {
   padding-left: 33px;
 
@@ -1140,6 +1238,7 @@ about & contacts — ===========================================================
 .about p {
   width: 475px;
 }
+
 .about .btn {
   width: 260px;
 }
@@ -1148,20 +1247,25 @@ about & contacts — ===========================================================
   width: 560px;
   margin-left: 20px;
 }
+
 .contact .map {
   margin-top: 40px;
   margin-bottom: 59px;
 }
+
 .contact .btn {
   width: 260px;
 }
+
 /*
 CATALOG=======================================================================CATALOG=======================================
 ============================================================================================================================
 */
+
 .container-catalog {
   min-width: 1200px;
 }
+
 .container-catalog h1 {
   margin-top: 37px;
   padding-right: 80px;
@@ -1173,6 +1277,7 @@ CATALOG=======================================================================CA
   font-family: "Gilroy", Arial, sans-serif;
   letter-spacing: 0.013em;
 }
+
 .breadcrumbs {
   margin-top: 24px;
   padding-right: 80px;
@@ -1183,10 +1288,12 @@ CATALOG=======================================================================CA
   line-height: 24px;
   font-family: "Open Sans", Arial, sans-serif;
 }
+
 .breadcrumbs-link,
 .breadcrumbs-current {
   color: rgba(0,0,0,0.3);
 }
+
 .breadcrumbs-path,
 .breadcrumbs-current {
   display: inline;
@@ -1206,12 +1313,15 @@ CATALOG=======================================================================CA
   background-repeat: no-repeat;
   background-position: top 7px center;
 }
+
 .breadcrumbs-link:last-child::after {
   background-position: top 7px left 18px;
 }
+
 .breadcrumbs-link:hover {
   color: rgba(0,0,0,0.6);
 }
+
 .breadcrumbs-link:active {
   color: rgba(0,0,0,0.1);
 }
@@ -1219,18 +1329,21 @@ CATALOG=======================================================================CA
 /*
 sorting — =======================================================================================================
 */
+
 .sort-row {
   width: 100%;
   margin-top: 46px;
 
   background-color: rgba(0,0,0,0.08);
 }
+
 .sort {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0 20px 0 420px;
 }
+
 .sort h2 {
   margin: 0;
 }
@@ -1244,6 +1357,7 @@ sorting — ====================================================================
 
   opacity: 1;
 }
+
 .sort-method-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1260,19 +1374,24 @@ sorting — ====================================================================
   -ms-flex-align: center;
   -ms-flex-negative: 0;
 }
+
 .sort-method-list li:nth-last-child(2) {
   margin-right: 19px;
   margin-left: auto;
 }
+
 .sort-popular {
   margin-left: 32px;
 }
+
 .sort-type {
   margin-left: 29px;
 }
+
 .sort-price {
   margin-left: 40px;
 }
+
 .sort-ascending {
   display: block;
   width: 11px;
@@ -1282,6 +1401,7 @@ sorting — ====================================================================
   background-repeat: no-repeat;
   background-position: bottom 2px center;
 }
+
 .sort-descending {
   display: block;
   width: 11px;
@@ -1291,18 +1411,23 @@ sorting — ====================================================================
   background-repeat: no-repeat;
   background-position: bottom 2px center;
 }
+
 .sort a:not([href]):hover {
   cursor: default;
 }
+
 .sort a[href] {
   opacity: 0.3;
 }
+
 .sort a[href]:hover {
   opacity: 0.6;
 }
+
 .sort a[href]:active {
   opacity: 1;
 }
+
 .catalog-columns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1312,6 +1437,7 @@ sorting — ====================================================================
 /*
 filters-catalog — =======================================================================================================
 */
+
 .filter {
   flex-grow: 1;
   flex-shrink: 0;
@@ -1337,34 +1463,42 @@ filters-catalog — ============================================================
   text-transform: uppercase;
   letter-spacing: 0.23em;
 }
+
 .filter h2 {
   display: block;
   width: 200px;
   margin: 0 68px 0 auto;
 }
+
 .form-filter {
   width: 210px;
   margin: 69px 68px 0 auto;
   margin-left: auto;
   padding-left: 7px;
 }
+
 .form-filter fieldset {
   padding: 0;
 
   border: none;
 }
-fieldset + fieldset {
+
+/*вложенность 2 */
+.form-filter fieldset + fieldset {
   margin-top: 26px;
 }
+
 .form-filter fieldset:last-of-type {
   margin-top: 39px;
 }
+
 .form-filter legend {
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
   font-family: "Gilroy", Arial, sans-serif;
 }
+
 .form-filter legend::before {
   content: "";
 
@@ -1376,9 +1510,11 @@ fieldset + fieldset {
 
   background-color: #000000;
 }
+
 /*
 double-slider =========================================================
 */
+
 .double-range {
   position: relative;
 
@@ -1386,6 +1522,14 @@ double-slider =========================================================
   height: 53px;
   margin-top: 25px;
   margin-left: -6px;
+}
+
+.double-range .value-from {
+  left:0;
+}
+
+.double-range .value-to {
+  left:60%;
 }
 
 .price-slider {
@@ -1421,6 +1565,7 @@ double-slider =========================================================
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .slider-handle:active {
   margin-top: -10px;
   margin-left: -11px;
@@ -1428,6 +1573,7 @@ double-slider =========================================================
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
 .value-from,
 .value-to {
   position: absolute;
@@ -1442,15 +1588,18 @@ double-slider =========================================================
   color: rgba(0,0,0,0.2);
   letter-spacing: normal;
 }
+
 .value-to {
   margin-left: -30px;
 }
+
 .form-filter label {
   font-size: 14px;
   line-height: 40px;
 
   cursor: pointer;
 }
+
 legend + .form-field {
   margin-top: 18px;
 }
@@ -1459,11 +1608,13 @@ legend + .form-field {
 .form-field [type="radio"] {
   display: none;
 }
+
 .form-field [type="checkbox"] + label {
   position: relative;
 
   padding-left: 38px;
 }
+
 [type="checkbox"] + label::before {
   content: "";
   position: absolute;
@@ -1479,24 +1630,30 @@ legend + .form-field {
   background-position: 0 0;
   opacity: 1;
 }
+
 [type="checkbox"]:checked + label::before {
   background-image: url("../img/checkbox-on.svg");
 }
+
 [type="checkbox"]:disabled + label,
 [type="radio"]:disabled + label {
   opacity: 0.25;
 }
+
 [type="checkbox"]:not(:disabled):hover + label::before,
 [type="radio"]:not(:disabled):not(:checked):hover + label::before {
   opacity: 0.6;
 }
+
 [type="checkbox"]:active + label::before,
 [type="radio"]:active + label::before {
   opacity: 1;
 }
+
 [type="checkbox"]:not(:disabled):checked:active + label::before {
   background-image: url("../img/checkbox-off.svg");
 }
+
 [type="checkbox"]:not(:disabled):not(:checked):active + label::before {
   background-image: url("../img/checkbox-on.svg");
 }
@@ -1509,11 +1666,13 @@ legend + .form-field {
 .form-filter .form-field:last-child {
   margin-bottom: -8px;
 }
+
 .form-field [type="radio"] + label {
   position: relative;
 
   padding-left: 38px;
 }
+
 [type="radio"] + label::before {
   content: "";
   position: absolute;
@@ -1529,12 +1688,15 @@ legend + .form-field {
   background-position: 0 0;
   opacity: 1;
 }
+
 [type="radio"]:checked + label::before {
   background-image: url("../img/radio-on.svg");
 }
+
 [type="radio"]:not(:disabled):not(:checked):active + label::before {
   background-image: url("../img/radio-on.svg");
 }
+
 .form-filter .btn {
   width: 200px;
   margin-top: 39px;
@@ -1543,6 +1705,7 @@ legend + .form-field {
 /*
 catalog-list — =======================================================================================================
 */
+
 .catalog {
   flex-grow: 1;
   flex-shrink: 0;
@@ -1555,6 +1718,7 @@ catalog-list — ===============================================================
   -ms-flex-negative: 0;
   -ms-flex-positive: 1;
 }
+
 .catalog-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1569,6 +1733,7 @@ catalog-list — ===============================================================
   -webkit-box-direction: normal;
   -webkit-box-orient: horizontal;
 }
+
 .catalog-item {
   position: relative;
 
@@ -1576,6 +1741,7 @@ catalog-list — ===============================================================
 
   cursor: default;
 }
+
 .catalog-item.new::before {
   content: "new";
   position: absolute;
@@ -1599,6 +1765,7 @@ catalog-list — ===============================================================
   border-radius: 50%;
   opacity: 0.1;
 }
+
 .catalog-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1609,6 +1776,7 @@ catalog-list — ===============================================================
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
 }
+
 .picture-controls {
   position: absolute;
   top: 0;
@@ -1619,6 +1787,7 @@ catalog-list — ===============================================================
 
   background-color: rgba(238,238,238,0.7);
 }
+
 header > .item-link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1633,6 +1802,7 @@ header > .item-link {
 
   word-wrap: break-word;
 }
+
 .catalog-item-name {
   display: block;
   width: 260px;
@@ -1645,6 +1815,7 @@ header > .item-link {
   color: #000000;
   letter-spacing: 0.01em;
 }
+
 .catalog-item-price {
   font-weight: 300;
   font-size: 16px;
@@ -1652,6 +1823,7 @@ header > .item-link {
   font-family: "Gilroy", Arial, sans-serif;
   color: #464646;
 }
+
 .catalog-item-image {
   position: relative;
 
@@ -1662,6 +1834,7 @@ header > .item-link {
   height: 380px;
   overflow: hidden;
 }
+
 .catalog-item-image:hover .picture-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1678,13 +1851,16 @@ header > .item-link {
   -webkit-box-orient: vertical;
   -ms-flex-align: center;
 }
+
 .picture-controls :nth-child(1n) {
   margin-top: 11px;
   margin-bottom: 2px;
 }
+
 .picture-controls :first-child {
   margin-top: 37px;
 }
+
 .btn.basket-add {
   display: block;
   flex-shrink: 0;
@@ -1692,6 +1868,7 @@ header > .item-link {
 
   -ms-flex-negative: 0;
 }
+
 .compare-add {
   display: block;
 
@@ -1704,10 +1881,12 @@ header > .item-link {
   border: none;
   opacity: 0.5;;
 }
+
 .compare-add:hover {
   cursor: pointer;
   opacity: 1;
 }
+
 .compare-add:active {
   outline: none;
   opacity: 0.2;
@@ -1716,6 +1895,7 @@ header > .item-link {
 /*
 pagination — =======================================================================================================
 */
+
 .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1730,6 +1910,7 @@ pagination — =================================================================
 
   background-color: rgba(0,0,0,0.08);
 }
+
 .pagination-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1753,15 +1934,19 @@ pagination — =================================================================
   -ms-flex-align: center;
   -ms-flex-positive: 1;
 }
+
 .pagination-list li {
   padding: 0 14px;
 }
+
 .pagination-list li:first-child {
   padding-left: 0;
 }
+
 .pagination-list li:last-child {
   padding-right: 0;
 }
+
 .pagination a {
   font-weight: bold;
   font-size: 16px;
@@ -1773,6 +1958,7 @@ pagination — =================================================================
 
   opacity: 0.3;
 }
+
 .pagination a:not([href]):hover {
   cursor: default;
 }
@@ -1782,6 +1968,7 @@ pagination — =================================================================
 .page-current a {
   opacity: 1;
 }
+
 .page-previous a,
 .page-next a {
   display: block;
@@ -1789,24 +1976,30 @@ pagination — =================================================================
 
   text-align: center;
 }
+
 .page-previous a {
   width: 126px;
 }
+
 .page-next a {
   width: 137px;
 }
+
 .page-previous a[href]:hover,
 .page-next a[href]:hover {
   background-color: rgba(0,0,0,0.08);
 }
+
 .page-previous a[href]:active,
 .page-next a[href]:active {
   /*background-color:rgba(0,0,0,0.08);*/
   color: rgba(0,0,0,0.3);
 }
+
 .page a[href]:hover {
   opacity: 0.6;
 }
+
 .page a[href]:active {
   opacity: 1;
 }
@@ -1814,6 +2007,7 @@ pagination — =================================================================
 /*
 footer — ==========================================================================================================
 */
+
 .footer-main {
   min-width: 1200px;
   padding: 65px 0;
@@ -1823,6 +2017,7 @@ footer — =====================================================================
 
   background-color: #464646;
 }
+
 .footer-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1831,6 +2026,7 @@ footer — =====================================================================
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .footer-row:first-child {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -1853,6 +2049,7 @@ footer — =====================================================================
 
   background-color: #ffc600;
 }
+
 .footer-row:last-child {
   margin-top: 60px;
 }
@@ -1863,24 +2060,30 @@ footer — =====================================================================
 
   list-style: none;
 }
+
 .footer-main a {
   color: inherit;
 }
+
 .footer-logo {
   margin-right: auto;
 }
+
 .footer-logo img {
   margin-top: -3px;
   margin-left: -1px;
 }
+
 .footer.user-nav a,
 .footer.shop-controls a {
   color: rgba(255, 255, 255, 0.7);
 }
+
 .footer.user-nav a:hover,
 .footer.shop-controls a:hover {
   color: #ffffff;
 }
+
 .footer.user-nav a:hover::before,
 .footer.shop-controls a:hover::before {
   opacity: 0.6;
@@ -1889,44 +2092,54 @@ footer — =====================================================================
 .footer.profile {
   max-width: 220px;
 }
+
 .footer.login,
 .footer.profile {
   padding-right: 23px;
 }
+
 .footer.login a::before,
 .footer.profile a::before {
   background-image: url("../img/user-footer.svg");
 }
+
 .footer.logout {
   margin-right: 22px;
   margin-left: -22px;
 
   color: rgba(255, 255, 255, 0.3);
 }
+
 .footer.logout a:hover {
   color: #ffffff;
 
   opacity: 1;
 }
+
 .footer.logout a:active {
   opacity: 0.3;
 }
+
 .footer.compare a {
   padding-top: 0;
 }
+
 .footer.compare a::before {
   top: 11px;
 
   background-image: url("../img/compare-footer.svg");
 }
+
 .footer.basket a {
   padding-top: 0;
 }
+
 .footer.basket a::before {
   top: 9px;
 
   background-image: url("../img/cart-footer.svg");
 }
+
 .footer-address {
   flex-shrink: 0;
   max-width: 360px;
@@ -1936,6 +2149,7 @@ footer — =====================================================================
 
   -ms-flex-negative: 0;
 }
+
 .site-nav-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1952,6 +2166,7 @@ footer — =====================================================================
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
 }
+
 .site-nav-footer li {
   display: block;
   margin-top: 2px;
@@ -1960,10 +2175,12 @@ footer — =====================================================================
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+
 .site-nav-footer li:nth-child(5n+1) {
   margin-left: -20px;
   padding-left: 0;
 }
+
 .site-nav-footer li:nth-child(5n+2) {
   padding-right: 16px;
   padding-left: 17px;
@@ -1972,6 +2189,7 @@ footer — =====================================================================
 .site-nav-footer a {
   margin-right: -0.2em;
 }
+
 .phone {
   flex-shrink: 0;
   max-width: 300px;
@@ -1981,6 +2199,7 @@ footer — =====================================================================
 
   -ms-flex-negative: 0;
 }
+
 .social-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1995,6 +2214,7 @@ footer — =====================================================================
 
   -webkit-box-flex: 1;
 }
+
 .social-list li:first-child {
   margin-left: -47px;
 }
@@ -2014,21 +2234,27 @@ footer — =====================================================================
   -webkit-transition: all 200ms;
           transition: all 200ms;
 }
+
 .social-list a:hover {
   opacity: 0.6;
 }
+
 .social-list a:active {
   opacity: 0.1;
 }
+
 .social-list .facebook {
   background-image: url("../img/fb.svg");
 }
+
 .social-list .instagram {
   background-image: url("../img/instagram.svg");
 }
+
 .social-list .twitter {
   background-image: url("../img/twitter.svg");
 }
+
 .credits {
   display: block;
   width: 35px;
@@ -2063,9 +2289,7 @@ footer — =====================================================================
 forms — =====================================================================================================================
 */
 
-
 /*background overlay*/
-
 .overlay {
   position: fixed;
   top: 0;
@@ -2112,6 +2336,7 @@ forms — ======================================================================
   -webkit-box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
           box-shadow: 0 10px 20px 0 rgba(4, 6, 6, 0.2);
 }
+
 .form-contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2140,6 +2365,7 @@ forms — ======================================================================
   background-color: rgba(230, 230, 230, 0.8);
   border: none;;
 }
+
 .form-contact input[type="email"]:invalid,
 .form-contact textarea:invalid {
   outline: none;
@@ -2147,12 +2373,12 @@ forms — ======================================================================
           box-shadow: none;
 }
 
-
 .form-contact input:not([type="submit"]):focus,
 .form-contact textarea:focus {
   background-color: #ffffff;
   outline: 3px solid #f0c52e;
 }
+
 .form-contact .validate:invalid,
 .form-contact .validate:invalid:hover,
 .form-contact .validate:invalid:active,
@@ -2162,7 +2388,6 @@ forms — ======================================================================
   -webkit-animation: shake 0.6s;
           animation: shake 0.6s;
 }
-
 
 .form-contact input[type="text"],
 .form-contact input[type="email"] {
@@ -2238,6 +2463,7 @@ forms — ======================================================================
 .modal-close-btn:active {
   opacity: 0.3;
 }
+
 /*уровень вложенности проходит по критериям*/
 .form-contact .validate.error-animation:invalid,
 .form-contact .validate.error-animation:invalid:hover,
@@ -2246,6 +2472,7 @@ forms — ======================================================================
   -webkit-animation: shake-toggle 0.6s;
           animation: shake-toggle 0.6s;
 }
+
 @-webkit-keyframes shake {
   0%,
   100% {
@@ -2270,6 +2497,7 @@ forms — ======================================================================
             transform: translateX(10px);
   }
 }
+
 @keyframes shake {
   0%,
   100% {
@@ -2294,6 +2522,7 @@ forms — ======================================================================
             transform: translateX(10px);
   }
 }
+
 @-webkit-keyframes shake-toggle {
   0%,
   100% {
@@ -2318,6 +2547,7 @@ forms — ======================================================================
             transform: translateX(10px);
   }
 }
+
 @keyframes shake-toggle {
   0%,
   100% {
