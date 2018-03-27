@@ -87,6 +87,7 @@ img {
 .outlined:active {
   outline: 1px dotted rgba(0, 0, 0, 0.5);
 }
+
 iframe {
   border: none;
 }
@@ -1483,9 +1484,12 @@ filters-catalog — ============================================================
   border: none;
 }
 
-/*вложенность 2 */
-.form-filter fieldset + fieldset {
+.form-filter fieldset {
   margin-top: 26px;
+}
+
+.form-filter fieldset:first-of-type {
+  margin-top: 0;
 }
 
 .form-filter fieldset:last-of-type {
@@ -1600,7 +1604,7 @@ double-slider =========================================================
   cursor: pointer;
 }
 
-legend + .form-field {
+.form-legend + .form-field {
   margin-top: 18px;
 }
 
@@ -1788,7 +1792,7 @@ catalog-list — ===============================================================
   background-color: rgba(238,238,238,0.7);
 }
 
-header > .item-link {
+.catalog-item .item-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

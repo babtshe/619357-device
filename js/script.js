@@ -5,6 +5,7 @@ function ready() {//DOM загрузился и ладно, фиг с карти
   if (location.hash) { //например, если ссылка снаружи
     hashWatcher();
   }
+
   window.addEventListener("hashchange", hashWatcher, false); //следим за сменой якоря
   function hashWatcher(event) {
     var hashstr = location.hash.split('#')[1];
@@ -14,7 +15,6 @@ function ready() {//DOM загрузился и ладно, фиг с карти
   function tabClicker(hash) {
     var button = document.querySelector('.service-button.' + hash);
     var slide = document.getElementById(hash);
-
     if (button && slide) { //если такая кнопочка и слайд есть в слайдере, то переключаем
       initialiseTabs();
       button.classList.add("current");
@@ -164,14 +164,12 @@ window.onload = function () { //ждем пока вся страница цел
   var formFields = document.querySelectorAll('.form-contact input[type="text"], .form-contact textarea, .form-contact input[type="email"]');
   var formSubmit = document.querySelector('.form-contact input[type="submit"]');
   var form = document.querySelector('.form-contact');
-
   if (form) {
     form.addEventListener('submit', validateAll, false);
   }
   initialiseForm();
 
   function initialiseForm() {
-
     for (var i = 0; i < formFields.length; i++) {
       formFields[i].addEventListener('blur', validate, false);
       formFields[i].classList.remove('validate');
@@ -222,7 +220,6 @@ window.onload = function () { //ждем пока вся страница цел
   var contactLink = document.querySelector('.form-contact-link');
   var formOverlay = document.getElementById('popup-writeus');
   if (contactLink) { //contact
-
     var formShutdown = function(event) {
       if (formOverlay.classList.contains('show')) {
         formOverlay.classList.remove('show');}
@@ -230,11 +227,9 @@ window.onload = function () { //ждем пока вся страница цел
         for (var i = 0; i< activeValidate.length; i++){
           activeValidate[i].classList.remove('validate');
         }
-
       form.reset();
       event.preventDefault();
     };
-
     contactLink.addEventListener('click', function (event) {
       formOverlay.classList.add('show');
       formOverlay.addEventListener('click', function (event) {
