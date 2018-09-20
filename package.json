@@ -1,0 +1,13 @@
+{
+  "name": "device",
+  "version": "1.0.0",
+  "description": "Учебный проект Девайс",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babtshe/device.git"
+  }
+}
